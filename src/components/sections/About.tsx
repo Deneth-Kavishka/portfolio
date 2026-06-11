@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 import { FaBriefcase, FaProjectDiagram, FaChalkboardTeacher, FaDownload } from "react-icons/fa";
 import { PERSONAL_INFO, STATS } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -65,15 +66,17 @@ export default function About() {
           <ScrollReveal direction="left">
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden glass p-3">
-                <div className="aspect-square rounded-xl bg-gradient-to-br from-primary-500/20 via-dark-200 to-accent-500/20 flex items-center justify-center">
-                  <div className="text-[8rem] font-bold gradient-text opacity-50 select-none">
-                    {PERSONAL_INFO.firstName[0]}
-                    {PERSONAL_INFO.lastName[0]}
-                  </div>
+                <div className="aspect-square rounded-xl bg-gradient-to-br from-primary-500/20 via-dark-200 to-accent-500/20 flex items-center justify-center relative overflow-hidden">
+                  <Image
+                    src={PERSONAL_INFO.avatarUrl}
+                    alt={PERSONAL_INFO.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
 
-              {/* Floating badge */}
+              {/* Floating badge 
               <motion.div
                 className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-2 flex items-center gap-2"
                 animate={{ y: [0, -8, 0] }}
@@ -81,7 +84,7 @@ export default function About() {
               >
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-sm text-text-secondary">Available for Freelance</span>
-              </motion.div>
+              </motion.div> */}
 
               {/* Decorative orbs */}
               <div className="absolute -top-8 -left-8 w-32 h-32 bg-primary-500/10 rounded-full blur-[60px] pointer-events-none" />

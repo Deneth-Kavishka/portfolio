@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import {
   FaGithub,
   FaLinkedinIn,
@@ -175,11 +176,14 @@ export default function Hero() {
             {/* Avatar placeholder */}
             <div className="relative w-72 h-72 md:w-96 md:h-96">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500/20 via-accent-500/10 to-primary-600/20 animate-pulse-glow" />
-              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-dark-200 to-dark-400 flex items-center justify-center overflow-hidden">
-                <div className="text-8xl md:text-9xl font-bold gradient-text select-none">
-                  {PERSONAL_INFO.firstName[0]}
-                  {PERSONAL_INFO.lastName[0]}
-                </div>
+              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-dark-200 to-dark-400 flex items-center justify-center overflow-hidden relative">
+                <Image
+                  src={PERSONAL_INFO.avatarUrl}
+                  alt={PERSONAL_INFO.name}
+                  fill
+                  priority
+                  className="object-cover"
+                />
               </div>
             </div>
 
