@@ -13,6 +13,7 @@ import {
   FaLaravel,
   FaJava,
   FaAndroid,
+  FaDatabase,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -41,6 +42,9 @@ import {
   SiCplusplus,
   SiSharp,
   SiDart,
+  SiR,
+  SiKotlin,
+  SiSpringboot,
 } from "react-icons/si";
 import { SKILLS, SKILL_CATEGORIES } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -48,6 +52,7 @@ import GlassCard from "@/components/ui/GlassCard";
 import ScrollReveal from "@/components/effects/ScrollReveal";
 
 const iconMap: Record<string, React.ReactNode> = {
+  // Frontend
   FaReact: <FaReact />,
   SiNextdotjs: <SiNextdotjs />,
   SiTypescript: <SiTypescript />,
@@ -56,6 +61,7 @@ const iconMap: Record<string, React.ReactNode> = {
   FaCss3Alt: <FaCss3Alt />,
   SiJavascript: <SiJavascript />,
   FaVuejs: <FaVuejs />,
+  // Backend
   FaNodeJs: <FaNodeJs />,
   SiExpress: <SiExpress />,
   FaPython: <FaPython />,
@@ -64,25 +70,34 @@ const iconMap: Record<string, React.ReactNode> = {
   FaLaravel: <FaLaravel />,
   SiFastapi: <SiFastapi />,
   SiGraphql: <SiGraphql />,
+  SiR: <SiR />,
+  SiSpringboot: <SiSpringboot />,
+  // Database
   SiMongodb: <SiMongodb />,
   SiPostgresql: <SiPostgresql />,
   SiMysql: <SiMysql />,
   SiFirebase: <SiFirebase />,
   SiRedis: <SiRedis />,
+  FaDatabase: <FaDatabase />,
+  // Mobile
   SiFlutter: <SiFlutter />,
   FaAndroid: <FaAndroid />,
+  SiKotlin: <SiKotlin />,
+  // Robotics & IoT
   SiArduino: <SiArduino />,
   SiRaspberrypi: <SiRaspberrypi />,
   SiEspressif: <SiEspressif />,
   SiMqtt: <SiMqtt />,
   SiC: <SiC />,
+  // AI & ML
   SiTensorflow: <SiTensorflow />,
   SiPytorch: <SiPytorch />,
   SiOpencv: <SiOpencv />,
   SiScikitlearn: <SiScikitlearn />,
+  // Languages
   FaJava: <FaJava />,
   SiCplusplus: <SiCplusplus />,
-  SiCsharp: <SiSharp />,
+  SiSharp: <SiSharp />,
   SiDart: <SiDart />,
 };
 

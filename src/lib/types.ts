@@ -42,7 +42,7 @@ export interface Project {
   featured: boolean;
 }
 
-export type ProjectCategory = "All" | "Web" | "Mobile" | "IoT" | "AI/ML";
+export type ProjectCategory = "All" | "Web" | "Mobile" | "IoT/Robotics" | "AI/ML";
 
 export interface Service {
   title: string;
