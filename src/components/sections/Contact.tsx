@@ -12,6 +12,7 @@ import {
   FaGithub,
   FaLinkedinIn,
   FaWhatsapp,
+  FaTwitter,
 } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { PERSONAL_INFO, EMAILJS_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
@@ -272,6 +273,7 @@ export default function Contact() {
                     {[
                       { icon: <FaGithub />, url: SOCIAL_LINKS[1]?.url },
                       { icon: <FaLinkedinIn />, url: SOCIAL_LINKS[0]?.url },
+                      { icon: <FaTwitter />, url: SOCIAL_LINKS[2]?.url },
                       { icon: <FaWhatsapp />, url: SOCIAL_LINKS[5]?.url },
                       { icon: <FaEnvelope />, url: SOCIAL_LINKS[6]?.url },
                     ].map((item, i) => (

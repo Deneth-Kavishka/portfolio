@@ -59,14 +59,19 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: "FaLinkedinIn",
   },
   { name: "GitHub", url: "https://github.com/Deneth-Kavishka", icon: "FaGithub" },
-  { name: "Facebook", url: "https://facebook.com/deneth", icon: "FaFacebookF" },
+  { name: "Twitter", url: "https://x.com/Deneth_kavish", icon: "FaTwitter" },
+  { name: "Facebook", url: "https://web.facebook.com/deneth.kavishka.7", icon: "FaFacebookF" },
   {
     name: "Instagram",
-    url: "https://instagram.com/deneth",
+    url: "https://instagram.com/deneth_kavishka_",
     icon: "FaInstagram",
   },
   // { name: "Fiverr", url: "https://fiverr.com/deneth", icon: "SiFiverr" },
-  { name: "WhatsApp", url: "https://wa.me/94769146080", icon: "FaWhatsapp" },
+  { 
+    name: "WhatsApp", 
+    url: "https://wa.me/94769146080?text=Hi%20Deneth!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.", 
+    icon: "FaWhatsapp" 
+  },
   {
     name: "Email",
     url: "mailto:denethkavishkaedu1@gmail.com",

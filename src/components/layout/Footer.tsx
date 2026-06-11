@@ -12,6 +12,7 @@ import {
   FaChevronUp,
   FaHeart,
   FaMapMarkerAlt,
+  FaTwitter,
 } from "react-icons/fa";
 // import { SiFiverr } from "react-icons/si";
 import { NAV_ITEMS, PERSONAL_INFO, SOCIAL_LINKS, SERVICES } from "@/lib/constants";
@@ -24,6 +25,7 @@ const iconMap: Record<string, React.ReactNode> = {
   FaInstagram: <FaInstagram />,
   FaWhatsapp: <FaWhatsapp />,
   FaEnvelope: <FaEnvelope />,
+  FaTwitter: <FaTwitter />,
   // SiFiverr: <SiFiverr />,
 };
 
@@ -80,7 +82,7 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-2">
-              {SERVICES.slice(0, 5).map((service) => (
+              {SERVICES.slice(0, 7).map((service) => (
                 <li key={service.title}>
                   <span className="text-text-secondary text-sm">
                     {service.title}
@@ -142,8 +144,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-text-muted text-sm flex items-center gap-1">
-            © {getCurrentYear()} {PERSONAL_INFO.name}. Made with{" "}
-            <FaHeart className="text-red-500 text-xs" /> All rights reserved.
+            © {getCurrentYear()} {PERSONAL_INFO.name}. All rights reserved.
           </p>
         </div>
       </div>

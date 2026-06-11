@@ -14,6 +14,7 @@ import {
   FaReact,
   FaNodeJs,
   FaPython,
+  FaTwitter,
 } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiArduino } from "react-icons/si";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants";
@@ -28,6 +29,7 @@ const socialIconMap: Record<string, React.ReactNode> = {
   FaInstagram: <FaInstagram />,
   FaWhatsapp: <FaWhatsapp />,
   FaEnvelope: <FaEnvelope />,
+  FaTwitter: <FaTwitter />,
   // SiFiverr: <SiFiverr />,
 };
 
@@ -121,6 +123,7 @@ export default function Hero() {
                 size="md"
                 icon={<FaDownload />}
                 href={PERSONAL_INFO.cvUrl}
+                target="_blank"
               >
                 Download CV
               </Button>
@@ -140,7 +143,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9 }}
             >
-              {SOCIAL_LINKS.slice(0, 5).map((link) => (
+              {SOCIAL_LINKS.filter(l => l.name !== "WhatsApp").slice(0, 5).map((link) => (
                 <motion.a
                   key={link.name}
                   href={link.url}

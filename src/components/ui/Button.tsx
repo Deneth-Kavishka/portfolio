@@ -11,6 +11,7 @@ interface ButtonProps {
   iconPosition?: "left" | "right";
   loading?: boolean;
   href?: string;
+  target?: string;
   children?: React.ReactNode;
   className?: string;
   disabled?: boolean;
@@ -25,6 +26,7 @@ export default function Button({
   iconPosition = "left",
   loading = false,
   href,
+  target,
   children,
   className,
   disabled,
@@ -90,8 +92,8 @@ export default function Button({
         className={classes}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        target={href.startsWith("http") ? "_blank" : undefined}
-        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        target={target || (href.startsWith("http") ? "_blank" : undefined)}
+        rel={target === "_blank" || href.startsWith("http") ? "noopener noreferrer" : undefined}
       >
         {content}
       </motion.a>
