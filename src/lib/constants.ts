@@ -30,7 +30,7 @@ export const PERSONAL_INFO: PersonalInfo = {
   ],
   email: "denethkavishkaedu1@gmail.com",
   phone: "+94 76 914 6080",
-  location: "Sri Lanka",
+  location: "Kurunegala, Sri Lanka",
   bio: "Passionate Software Engineer with expertise in full-stack web development, robotics, IoT systems, and AI/ML. I build elegant, scalable digital solutions that solve real-world problems. As a university IT instructor, I bridge the gap between academic theory and industry practice, mentoring the next generation of tech innovators.",
   //  shortBio: "Building the future through code, circuits, and creativity. Transforming complex challenges into elegant digital solutions.",
   shortBio:
@@ -55,17 +55,17 @@ export const NAV_ITEMS: NavItem[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/deneth",
+    url: "https://www.linkedin.com/in/deneth-kavishka-338288284/",
     icon: "FaLinkedinIn",
   },
-  { name: "GitHub", url: "https://github.com/deneth", icon: "FaGithub" },
+  { name: "GitHub", url: "https://github.com/Deneth-Kavishka", icon: "FaGithub" },
   { name: "Facebook", url: "https://facebook.com/deneth", icon: "FaFacebookF" },
   {
     name: "Instagram",
     url: "https://instagram.com/deneth",
     icon: "FaInstagram",
   },
-  { name: "Fiverr", url: "https://fiverr.com/deneth", icon: "SiFiverr" },
+  // { name: "Fiverr", url: "https://fiverr.com/deneth", icon: "SiFiverr" },
   { name: "WhatsApp", url: "https://wa.me/94769146080", icon: "FaWhatsapp" },
   {
     name: "Email",
@@ -417,7 +417,7 @@ export const TIMELINE: TimelineItem[] = [
     title: "Freelance Full-Stack Developer",
     subtitle: "Self-Employed",
     description:
-      "Delivering custom web applications, e-commerce platforms, and IoT solutions for clients worldwide through Fiverr and direct contracts.",
+      "Delivering custom web applications, e-commerce platforms, and IoT solutions for clients worldwide through direct contracts.",
     type: "experience",
   },
   {
@@ -429,11 +429,35 @@ export const TIMELINE: TimelineItem[] = [
     type: "achievement",
   },
   {
-    year: "2025",
+    year: "2026",
     title: " AI/ML Engineer - Stage 1",
     subtitle: "SLIIT",
     description:
       "Completed the first stage of the AI/ML Engineer certification, gaining foundational knowledge in machine learning algorithms, data preprocessing, and model evaluation techniques.",
+    type: "certification",
+  },
+  {
+    year: "2025",
+    title: "Postman API Fundamentals Student Expert",
+    subtitle: "Postman",
+    description:
+      "Earned the Postman API Fundamentals Student Expert certification by demonstrating proficiency in API design, testing, and documentation using the Postman platform.",
+    type: "certification",
+  },
+  {
+    year: "2025",
+    title: "Get started with GitHub and GitHub Copilot.",
+    subtitle: "Microsoft Learn",
+    description:
+      "Completed the 'Get started with GitHub and GitHub Copilot' learning path, acquiring skills in version control, collaborative coding, and leveraging AI-powered code suggestions for enhanced development productivity.",
+    type: "certification",
+  },
+  {
+    year: "2025",
+    title: "Microsoft Certified: Discover Microsoft AI for leaders in sustainability.",
+    subtitle: "Microsoft Learn",
+    description:
+      "Achieved the 'Microsoft Certified: Discover Microsoft AI for leaders in sustainability' certification, demonstrating knowledge of AI applications in sustainability initiatives and understanding how to leverage Microsoft AI technologies for environmental impact.",
     type: "certification",
   },
   {

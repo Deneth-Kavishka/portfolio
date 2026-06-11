@@ -123,7 +123,7 @@ export default function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder=""
                       className={inputClasses}
                     />
                     {errors.name && (
@@ -139,7 +139,7 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder=""
                       className={inputClasses}
                     />
                     {errors.email && (

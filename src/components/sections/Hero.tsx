@@ -15,7 +15,7 @@ import {
   FaNodeJs,
   FaPython,
 } from "react-icons/fa";
-import { SiFiverr, SiTypescript, SiNextdotjs, SiArduino } from "react-icons/si";
+import { SiTypescript, SiNextdotjs, SiArduino } from "react-icons/si";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants";
 import { scrollToSection } from "@/lib/utils";
 import Button from "@/components/ui/Button";
@@ -28,7 +28,7 @@ const socialIconMap: Record<string, React.ReactNode> = {
   FaInstagram: <FaInstagram />,
   FaWhatsapp: <FaWhatsapp />,
   FaEnvelope: <FaEnvelope />,
-  SiFiverr: <SiFiverr />,
+  // SiFiverr: <SiFiverr />,
 };
 
 // Pre-computed positions (radius=180) to avoid SSR hydration mismatch from Math.cos/sin precision

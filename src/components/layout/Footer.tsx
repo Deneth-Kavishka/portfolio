@@ -11,8 +11,9 @@ import {
   FaEnvelope,
   FaChevronUp,
   FaHeart,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
-import { SiFiverr } from "react-icons/si";
+// import { SiFiverr } from "react-icons/si";
 import { NAV_ITEMS, PERSONAL_INFO, SOCIAL_LINKS, SERVICES } from "@/lib/constants";
 import { scrollToSection, getCurrentYear } from "@/lib/utils";
 
@@ -23,7 +24,7 @@ const iconMap: Record<string, React.ReactNode> = {
   FaInstagram: <FaInstagram />,
   FaWhatsapp: <FaWhatsapp />,
   FaEnvelope: <FaEnvelope />,
-  SiFiverr: <SiFiverr />,
+  // SiFiverr: <SiFiverr />,
 };
 
 export default function Footer() {
@@ -109,7 +110,7 @@ export default function Footer() {
                 <span>{PERSONAL_INFO.phone}</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-primary-400 shrink-0">📍</span>
+                <FaMapMarkerAlt className="text-primary-400 shrink-0 mt-1" />
                 <span>{PERSONAL_INFO.location}</span>
               </li>
             </ul>

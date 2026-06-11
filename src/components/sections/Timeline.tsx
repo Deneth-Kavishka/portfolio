@@ -1,6 +1,6 @@
 "use client";
 
-import { FaGraduationCap, FaBriefcase, FaCertificate } from "react-icons/fa";
+import { FaGraduationCap, FaBriefcase, FaCertificate, FaTrophy, FaAward } from "react-icons/fa";
 import { TIMELINE } from "@/lib/constants";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
@@ -20,10 +20,16 @@ const typeConfig = {
     bgColor: "bg-emerald-500/10",
   },
   certification: {
-    icon: <FaCertificate />,
-    color: "text-yellow-400",
-    borderColor: "border-yellow-400/30",
-    bgColor: "bg-yellow-500/10",
+    icon: <FaAward />,
+    color: "text-rose-400",
+    borderColor: "border-rose-400/30",
+    bgColor: "bg-rose-500/10",
+  },
+  achievement: {
+    icon: <FaTrophy />,
+    color: "text-purple-400",
+    borderColor: "border-purple-400/30",
+    bgColor: "bg-purple-500/10",
   },
 };
 
