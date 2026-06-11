@@ -173,17 +173,20 @@ export default function Hero() {
               <div className="w-80 h-80 md:w-[400px] md:h-[400px] rounded-full border border-primary-500/20 animate-spin-slow" />
             </div>
 
-            {/* Avatar placeholder */}
+            {/* Avatar */}
             <div className="relative w-72 h-72 md:w-96 md:h-96">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500/20 via-accent-500/10 to-primary-600/20 animate-pulse-glow" />
-              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-dark-200 to-dark-400 flex items-center justify-center overflow-hidden relative">
-                <Image
-                  src={PERSONAL_INFO.avatarUrl}
-                  alt={PERSONAL_INFO.name}
-                  fill
-                  priority
-                  className="object-cover"
-                />
+              <div className="absolute inset-2 rounded-full overflow-hidden">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={PERSONAL_INFO.avatarUrl}
+                    alt={PERSONAL_INFO.name}
+                    fill
+                    priority
+                    unoptimized
+                    className="object-cover rounded-full"
+                  />
+                </div>
               </div>
             </div>
 

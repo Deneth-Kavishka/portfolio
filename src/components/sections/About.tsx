@@ -71,6 +71,7 @@ export default function About() {
                     src={PERSONAL_INFO.avatarUrl}
                     alt={PERSONAL_INFO.name}
                     fill
+                    unoptimized
                     className="object-cover"
                   />
                 </div>

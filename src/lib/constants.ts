@@ -35,7 +35,7 @@ export const PERSONAL_INFO: PersonalInfo = {
   //  shortBio: "Building the future through code, circuits, and creativity. Transforming complex challenges into elegant digital solutions.",
   shortBio:
     "Software Engineer, Full-Stack Developer, competitive roboticist, and IT Instructor. Build scalable web applications, engineer intelligent hardware solutions, and mentor the next generation of tech innovators.",
-  avatarUrl: "/avatar.png",
+  avatarUrl: "/profile.png",
   cvUrl: "/cv.pdf",
 };
 
