@@ -14,15 +14,8 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-dark-500">
       {/* Header */}
-      <div className="pt-24 pb-12 px-6">
+      <div className="pt-28 pb-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-text-secondary hover:text-primary-400 transition-colors mb-8"
-          >
-            ← Back to Home
-          </Link>
-
           <div className="inline-block glass rounded-full px-4 py-1.5 text-xs uppercase tracking-widest text-primary-400 font-medium mb-6">
             Blog
           </div>

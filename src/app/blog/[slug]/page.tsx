@@ -36,7 +36,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  // Simple markdown-like rendering — converts basic markdown to HTML
+  // Simple markdown-like rendering
   const renderContent = (content: string) => {
     return content
       .split("\n\n")
@@ -159,8 +159,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-dark-500">
-      <div className="max-w-3xl mx-auto px-6 pt-24 pb-24">
-        {/* Back link */}
+      <div className="max-w-3xl mx-auto px-6 pt-28 pb-24">
+        {/* Back to blog */}
         <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-text-secondary hover:text-primary-400 transition-colors mb-10"
@@ -202,7 +202,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent mb-10" />
 
         {/* Content */}
-        <article className="prose-dark">{renderContent(post.content)}</article>
+        <article>{renderContent(post.content)}</article>
 
         {/* Bottom divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent my-12" />

@@ -56,7 +56,7 @@ export interface TimelineItem {
   title: string;
   subtitle: string;
   description: string;
-  type: "education" | "experience" | "certification";
+  type: "education" | "experience" | "certification" | "achievement";
 }
 
 export interface Testimonial {

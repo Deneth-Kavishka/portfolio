@@ -47,8 +47,8 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Projects", href: "projects" },
   { label: "Services", href: "services" },
   { label: "Experience", href: "experience" },
-  { label: "Testimonials", href: "testimonials" },
   { label: "Contact", href: "contact" },
+  { label: "Blog", href: "/blog" },
 ];
 
 // ── Social Links ──────────────────────────────────────────────
@@ -91,7 +91,12 @@ export const SKILLS: Skill[] = [
   { name: "React.js", level: 95, icon: "FaReact", category: "Frontend" },
   { name: "TypeScript", level: 95, icon: "SiTypescript", category: "Frontend" },
   { name: "Next.js", level: 90, icon: "SiNextdotjs", category: "Frontend" },
-  { name: "Tailwind CSS", level: 90, icon: "SiTailwindcss", category: "Frontend" },
+  {
+    name: "Tailwind CSS",
+    level: 90,
+    icon: "SiTailwindcss",
+    category: "Frontend",
+  },
   { name: "React-Native", level: 75, icon: "FaReact", category: "Frontend" },
 
   // Backend
@@ -120,24 +125,49 @@ export const SKILLS: Skill[] = [
   // Robotics & IoT
   { name: "Arduino", level: 95, icon: "SiArduino", category: "Robotics & IoT" },
   { name: "ESP32", level: 85, icon: "SiEspressif", category: "Robotics & IoT" },
-  { name: "ESP8266", level: 82, icon: "SiEspressif", category: "Robotics & IoT" },
+  {
+    name: "ESP8266",
+    level: 82,
+    icon: "SiEspressif",
+    category: "Robotics & IoT",
+  },
   { name: "Embedded C", level: 80, icon: "SiC", category: "Robotics & IoT" },
-  { name: "Raspberry Pi", level: 75, icon: "SiRaspberrypi", category: "Robotics & IoT" },
+  {
+    name: "Raspberry Pi",
+    level: 75,
+    icon: "SiRaspberrypi",
+    category: "Robotics & IoT",
+  },
 
   // AI & ML
-  {name: "Python", level: 85, icon: "FaPython", category: "AI & ML" },
-  {name: "R", level: 85, icon: "SiR", category: "AI & ML" },
+  { name: "Python", level: 85, icon: "FaPython", category: "AI & ML" },
+  { name: "R", level: 85, icon: "SiR", category: "AI & ML" },
   { name: "OpenCV", level: 85, icon: "SiOpencv", category: "AI & ML" },
   { name: "TensorFlow", level: 75, icon: "SiTensorflow", category: "AI & ML" },
   { name: "PyTorch", level: 70, icon: "SiPytorch", category: "AI & ML" },
-  { name: "Scikit-learn", level: 70, icon: "SiScikitlearn", category: "AI & ML"},
+  {
+    name: "Scikit-learn",
+    level: 70,
+    icon: "SiScikitlearn",
+    category: "AI & ML",
+  },
 
   // Programming Languages
   { name: "Java", level: 95, icon: "FaJava", category: "Languages" },
   { name: "PHP", level: 95, icon: "FaPhp", category: "Languages" },
   { name: "Python", level: 90, icon: "FaPython", category: "Languages" },
-  { name: "JavaScript", level: 95, icon: "SiJavascript", category: "Languages" },
-  { name: "TypeScript", level: 90, icon: "SiTypescript", category: "Languages" },
+  {
+    name: "JavaScript",
+    level: 95,
+    icon: "SiJavascript",
+    category: "Languages",
+  },
+  {
+    name: "TypeScript",
+    level: 90,
+    icon: "SiTypescript",
+    category: "Languages",
+  },
   { name: "R", level: 85, icon: "SiR", category: "Languages" },
   { name: "Kotlin", level: 85, icon: "SiKotlin", category: "Languages" },
   { name: "C", level: 80, icon: "SiC", category: "Languages" },
@@ -154,9 +184,16 @@ export const PROJECTS: Project[] = [
     description:
       "A comprehensive, modern healthcare management system for Sri Lanka, featuring electronic health records (EHR), role-based access control, QR-code prescriptions, and secure nationwide patient data management.",
     image: "/projects/medivault.jpg",
-    techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL", "IOT(RFID)", "ESP32"],
+    techStack: [
+      "React",
+      "ExpressJS",
+      "Node.js",
+      "PostgreSQL",
+      "IOT(RFID)",
+      "ESP32",
+    ],
     category: "Web",
-    liveUrl: "https://medivault-demo.vercel.app",
+    liveUrl: "",
     githubUrl: "https://github.com/Deneth-Kavishka/MediVault",
     featured: true,
   },
@@ -168,7 +205,8 @@ export const PROJECTS: Project[] = [
     image: "/projects/chess-robot.jpg",
     techStack: ["Python", "OpenCV", "Arduino", "ESP32-cam", "pychess"],
     category: "IoT/Robotics",
-    liveUrl: "https://www.linkedin.com/posts/deneth-kavishka-338288284_robotics-ai-chessrobot-activity-7299040595333758976-0FBb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUYl9wByrxD3V4_V9pZkM9a-ZQEhBoaFfA",
+    liveUrl:
+      "https://www.linkedin.com/posts/deneth-kavishka-338288284_robotics-ai-chessrobot-activity-7299040595333758976-0FBb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUYl9wByrxD3V4_V9pZkM9a-ZQEhBoaFfA",
     githubUrl: "https://github.com/Deneth-Kavishka/RoboArm-Testing",
     featured: false,
   },
@@ -178,10 +216,18 @@ export const PROJECTS: Project[] = [
     description:
       "Engineered a computer vision application utilizing face recognition to automate attendance tracking. Improved processing efficiency and accuracy compared to traditional manual logging methods.",
     image: "/projects/smart-attendance.jpg",
-    techStack: ["React", "ExpressJS", "Node.js", "Python", "TensorFlow", "OpenCV"],
+    techStack: [
+      "React",
+      "ExpressJS",
+      "Node.js",
+      "Python",
+      "TensorFlow",
+      "OpenCV",
+    ],
     category: "AI/ML",
-    liveUrl: "https://ai-classifier-demo.vercel.app",
-    githubUrl: "https://github.com/Deneth-Kavishka/Attendify-WebApplication/tree/dev_stage",
+    liveUrl: "",
+    githubUrl:
+      "https://github.com/Deneth-Kavishka/Attendify-WebApplication/tree/dev_stage",
     featured: false,
   },
   {
@@ -190,10 +236,17 @@ export const PROJECTS: Project[] = [
     description:
       "A comprehensive tuition management mobile app for students and educators, featuring course scheduling, progress tracking, and communication tools.",
     image: "/projects/academix.jpg",
-    techStack: ["Kotlin", "sqlite", "Firebase", "Android Studio", "Material Design"],
+    techStack: [
+      "Kotlin",
+      "sqlite",
+      "Firebase",
+      "Android Studio",
+      "Material Design",
+    ],
     category: "Mobile",
     liveUrl: "",
-    githubUrl: "https://github.com/Deneth-Kavishka/TutionManagementApp/tree/Final-Development",
+    githubUrl:
+      "https://github.com/Deneth-Kavishka/TutionManagementApp/tree/Final-Development",
     featured: false,
   },
   {
@@ -204,7 +257,7 @@ export const PROJECTS: Project[] = [
     image: "/projects/task-mgmt.jpg",
     techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL"],
     category: "Web",
-    liveUrl: "https://taskflow-demo.vercel.app",
+    liveUrl: "",
     githubUrl: "https://github.com/Deneth-Kavishka/TaskScheduler",
     featured: false,
   },
@@ -216,7 +269,7 @@ export const PROJECTS: Project[] = [
     image: "/projects/portfolio.jpg",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web",
-    liveUrl: "https://deneth.dev",
+    liveUrl: "",
     githubUrl: "https://github.com/Deneth-Kavishka/portfolio",
     featured: false,
   },
@@ -228,7 +281,7 @@ export const PROJECTS: Project[] = [
     image: "/projects/heritage-tourism.jpg",
     techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL"],
     category: "AI/ML",
-    liveUrl: "https://chatbot-demo.vercel.app",
+    liveUrl: "",
     githubUrl: "https://github.com/HeritaGo/HeritaGo_Version1",
     featured: false,
   },
@@ -281,17 +334,16 @@ export const SERVICES: Service[] = [
       "MERN/MEAN stack development",
       "Database design & optimization",
       "Authentication & authorization",
-      "Cloud deployment & DevOps",
+      "Cloud deployment",
     ],
   },
   {
     title: "API Development",
     description:
-      "Robust, scalable RESTful and GraphQL APIs with comprehensive documentation and security best practices.",
+      "Robust, scalable RESTful APIs with comprehensive documentation and security best practices.",
     icon: "HiCpuChip",
     features: [
       "RESTful API design",
-      "GraphQL implementations",
       "Third-party API integrations",
       "API documentation & testing",
     ],
@@ -302,7 +354,7 @@ export const SERVICES: Service[] = [
       "Translating design mockups into functional, accessible, and performant web interfaces with pixel-perfect accuracy.",
     icon: "HiPaintBrush",
     features: [
-      "Figma/Adobe XD to code",
+      "Figma to code",
       "Design system development",
       "Accessibility compliance",
       "Cross-browser compatibility",
@@ -337,15 +389,31 @@ export const SERVICES: Service[] = [
 // ── Timeline ──────────────────────────────────────────────────
 export const TIMELINE: TimelineItem[] = [
   {
-    year: "2024 - Present",
-    title: "University IT Instructor",
-    subtitle: "University of Technology",
+    year: "2023 - Present",
+    title: "BSc (Hons) Computer Science with data Science",
+    subtitle: "NIBM",
     description:
-      "Teaching web development, data structures, and IoT systems. Mentoring students in research projects and guiding them through industry-level practices.",
+      "Pursuing a comprehensive computer science degree with a focus on data science, machine learning, and software engineering. Engaging in advanced coursework and research projects to deepen technical expertise.",
+    type: "education",
+  },
+  {
+    year: "2026 JAN - Present",
+    title: "University IT Instructor",
+    subtitle: "NIBM",
+    description:
+      "Guiding IT undergraduates through software engineering, modern web technologies, IOT Systems, Robotics development and system design. Mentoring students in research projects and guiding them through industry-level practices.",
     type: "experience",
   },
   {
-    year: "2023 - Present",
+    year: "2025",
+    title: "IEEE Student Branch Chairperson",
+    subtitle: "IEEE Student Branch - Kurunegala Chapter",
+    description:
+      "Leading the IEEE student branch, organizing technical workshops, hackathons, and industry talks to foster innovation and professional development among students.",
+    type: "experience",
+  },
+  {
+    year: "2024 - Present",
     title: "Freelance Full-Stack Developer",
     subtitle: "Self-Employed",
     description:
@@ -353,48 +421,32 @@ export const TIMELINE: TimelineItem[] = [
     type: "experience",
   },
   {
-    year: "2023",
-    title: "AWS Cloud Practitioner",
-    subtitle: "Amazon Web Services",
+    year: "2026",
+    title: "1st Runner-Up: Line Following Racing Robot Competition",
+    subtitle: "ESOFT Innovate Expo",
     description:
-      "Certified in cloud fundamentals, AWS services, security, architecture, and pricing models.",
+      "Designed and built a line-following robot using Arduino and computer vision, achieving 1st runner-up position in a competitive robotics challenge.",
+    type: "achievement",
+  },
+  {
+    year: "2025",
+    title: " AI/ML Engineer - Stage 1",
+    subtitle: "SLIIT",
+    description:
+      "Completed the first stage of the AI/ML Engineer certification, gaining foundational knowledge in machine learning algorithms, data preprocessing, and model evaluation techniques.",
     type: "certification",
   },
   {
-    year: "2022 - 2024",
-    title: "Software Engineer",
-    subtitle: "Tech Solutions Ltd.",
+    year: "2023 - 2024",
+    title: "Higher National Diploma in Software Engineering",
+    subtitle: "NIBM",
     description:
-      "Led full-stack development of enterprise applications. Built microservice architectures, CI/CD pipelines, and mentored junior developers.",
-    type: "experience",
-  },
-  {
-    year: "2022",
-    title: "Meta Front-End Developer Certificate",
-    subtitle: "Meta (Coursera)",
-    description:
-      "Advanced React, JavaScript, UX/UI design principles, and front-end testing methodologies.",
-    type: "certification",
-  },
-  {
-    year: "2020 - 2024",
-    title: "BSc (Hons) in Information Technology",
-    subtitle: "University of Technology",
-    description:
-      "Specialized in software engineering with focus on web technologies, IoT systems, and artificial intelligence. First Class Honours.",
-    type: "education",
-  },
-  {
-    year: "2018 - 2020",
-    title: "Diploma in IT",
-    subtitle: "National Institute of Technology",
-    description:
-      "Foundation studies in programming, networking, database management, and web development technologies.",
+      "Comprehensive software engineering curriculum covering programming, databases, web development, Robotics, IoT and software design principles.",
     type: "education",
   },
 ];
 
-// ── Testimonials ──────────────────────────────────────────────
+/*// ── Testimonials ──────────────────────────────────────────────
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: "t1",
@@ -446,7 +498,7 @@ export const TESTIMONIALS: Testimonial[] = [
     avatar: "/testimonials/lisa.jpg",
     rating: 5,
   },
-];
+]; */
 
 // ── Skill Categories for filtering ───────────────────────────
 export const SKILL_CATEGORIES = [

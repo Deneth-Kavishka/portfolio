@@ -1,21 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+// NOTE: Category filter is kept in the codebase for future use.
+// Uncomment the filter section below when you want to enable category filtering.
+// Categories are defined in constants.ts as PROJECT_CATEGORIES.
+
+import { motion } from "motion/react";
 import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
-import { PROJECTS, PROJECT_CATEGORIES } from "@/lib/constants";
+import { PROJECTS } from "@/lib/constants";
+// import { PROJECT_CATEGORIES } from "@/lib/constants"; // Uncomment for category filter
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import Badge from "@/components/ui/Badge";
 import ScrollReveal from "@/components/effects/ScrollReveal";
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
-
-  const filtered =
-    activeCategory === "All"
-      ? PROJECTS
-      : PROJECTS.filter((p) => p.category === activeCategory);
+  // To enable category filter in the future:
+  // const [activeCategory, setActiveCategory] = useState<string>("All");
+  // const filtered = activeCategory === "All"
+  //   ? PROJECTS
+  //   : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
     <section id="projects" className="relative">
@@ -29,7 +32,7 @@ export default function Projects() {
           subtitle="Showcasing my best work across different domains"
         />
 
-        {/* Filter */}
+        {/* Category Filter — uncomment when needed in the future
         <ScrollReveal direction="up">
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {PROJECT_CATEGORIES.map((cat) => (
@@ -49,22 +52,17 @@ export default function Projects() {
             ))}
           </div>
         </ScrollReveal>
+        */}
 
         {/* Projects Grid */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            {filtered.map((project, i) => (
+        <ScrollReveal direction="up">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PROJECTS.map((project, i) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
               >
                 <GlassCard hover glow padding="none" className="group overflow-hidden">
@@ -134,8 +132,8 @@ export default function Projects() {
                 </GlassCard>
               </motion.div>
             ))}
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
