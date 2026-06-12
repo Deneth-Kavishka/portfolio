@@ -188,7 +188,7 @@ export const PROJECTS: Project[] = [
     title: "MediVault - All Your Care, One Secure Place",
     description:
       "A comprehensive, modern healthcare management system for Sri Lanka, featuring electronic health records (EHR), role-based access control, QR-code prescriptions, and secure nationwide patient data management.",
-    image: "/projects/medivault.jpg",
+    image: "/projects/medivault.png",
     techStack: [
       "React",
       "ExpressJS",
@@ -207,20 +207,20 @@ export const PROJECTS: Project[] = [
     title: "Alpha Autonomous - Automated Chess-Playing Robotic Arm",
     description:
       "AI-driven robotic arm capable of playing chess against human opponents. Integrated computer vision for board state recognition and machine learning algorithms for move optimization. ",
-    image: "/projects/chess-robot.jpg",
+    image: "/projects/chess-robot.png",
     techStack: ["Python", "OpenCV", "Arduino", "ESP32-cam", "pychess"],
     category: "IoT/Robotics",
     liveUrl:
       "https://www.linkedin.com/posts/deneth-kavishka-338288284_robotics-ai-chessrobot-activity-7299040595333758976-0FBb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUYl9wByrxD3V4_V9pZkM9a-ZQEhBoaFfA",
     githubUrl: "https://github.com/Deneth-Kavishka/RoboArm-Testing",
-    featured: false,
+    featured: true,
   },
   {
     id: "smart-attendance-system",
     title: "Attendify - Smart Attendance management System",
     description:
       "Engineered a computer vision application utilizing face recognition to automate attendance tracking. Improved processing efficiency and accuracy compared to traditional manual logging methods.",
-    image: "/projects/smart-attendance.jpg",
+    image: "/projects/attendify.png",
     techStack: [
       "React",
       "ExpressJS",
@@ -240,7 +240,7 @@ export const PROJECTS: Project[] = [
     title: "ACADEMIX - Tuition Management App",
     description:
       "A comprehensive tuition management mobile app for students and educators, featuring course scheduling, progress tracking, and communication tools.",
-    image: "/projects/academix.jpg",
+    image: "/projects/academix.png",
     techStack: [
       "Kotlin",
       "sqlite",
@@ -259,7 +259,7 @@ export const PROJECTS: Project[] = [
     title: "TaskScheduler - AI Powered Task Management System",
     description:
       "TaskScheduler is an intelligent task scheduling application that leverages advanced data structures and algorithms to optimize task management.",
-    image: "/projects/task-mgmt.jpg",
+    image: "/projects/task.png",
     techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL"],
     category: "Web",
     liveUrl: "",
@@ -271,7 +271,7 @@ export const PROJECTS: Project[] = [
     title: "Developer Portfolio Website",
     description:
       "This premium portfolio website built with Next.js 15, featuring particle backgrounds, glassmorphism design, and smooth animations.",
-    image: "/projects/portfolio.jpg",
+    image: "/projects/portfolio.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web",
     liveUrl: "",

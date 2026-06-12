@@ -3,7 +3,7 @@ export default function Loading() {
     <div className="loading-screen">
       <div className="flex flex-col items-center gap-6">
         {/* Logo */}
-        <div className="text-5xl font-bold gradient-text animate-pulse">
+        <div className="text-xl font-bold gradient-text font-dealoras tracking-wider animate-pulse">
           DK
         </div>
 

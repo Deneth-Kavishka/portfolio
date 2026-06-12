@@ -70,7 +70,7 @@ export default function Navbar() {
           {isHomePage ? (
             <motion.button
               onClick={() => handleNavClick("hero")}
-              className="text-2xl font-bold gradient-text cursor-pointer"
+              className="text-2xl text-gradient font-bold cursor-pointer font-dealoras tracking-wider"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -79,7 +79,7 @@ export default function Navbar() {
           ) : (
             <Link href="/">
               <motion.span
-                className="text-2xl font-bold gradient-text cursor-pointer"
+                className="text-3xl font-bold cursor-pointer font-dealoras tracking-wider"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -18,6 +19,12 @@ const outfit = Outfit({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const dealorasFont = localFont({
+  src: "../../public/fonts/Dealoras.ttf",
+  variable: "--font-dealoras",
   display: "swap",
 });
 
@@ -89,7 +96,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} dark`}
+      className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} ${dealorasFont.variable} dark`}
     >
       <head>
         {/* JSON-LD Structured Data */}
