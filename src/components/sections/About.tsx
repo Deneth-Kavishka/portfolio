@@ -68,7 +68,7 @@ export default function About() {
               <div className="relative rounded-2xl overflow-hidden glass p-3">
                 <div className="aspect-square rounded-xl bg-gradient-to-br from-primary-500/20 via-dark-200 to-accent-500/20 flex items-center justify-center relative overflow-hidden">
                   <Image
-                    src={PERSONAL_INFO.avatarUrl}
+                    src="/avatar.png"
                     alt={PERSONAL_INFO.name}
                     fill
                     unoptimized

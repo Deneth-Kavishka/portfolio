@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-x-hidden"
     >
       {/* Background orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -161,57 +161,47 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Avatar / Image */}
+          {/* Profile Image */}
           <motion.div
-            className="order-1 lg:order-2 flex justify-center relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+            className="order-1 lg:order-2 flex justify-center lg:justify-end relative"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
           >
-            {/* Decorative ring */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-80 h-80 md:w-[400px] md:h-[400px] rounded-full border border-primary-500/20 animate-spin-slow" />
-            </div>
-
-            {/* Avatar */}
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-500/20 via-accent-500/10 to-primary-600/20 animate-pulse-glow" />
-              <div className="absolute inset-2 rounded-full overflow-hidden">
-                <div className="relative w-full h-full">
+            <div className="relative w-80 h-[28rem] md:w-[420px] md:h-[520px] lg:w-[480px] lg:h-[580px]">
+              {/* Large diffused ambient glow */}
+              <div className="absolute inset-[-40px] bg-gradient-to-t from-primary-400/25 via-primary-700/10 to-accent-800/15 rounded-full blur-[100px] pointer-events-none" />
+              {/* Tighter body glow to soften cutout edges */}
+              <div className="absolute inset-[10%] bg-gradient-to-br from-primary-500/20 via-accent-500/15 to-primary-600/20 rounded-full blur-[60px] pointer-events-none" />
+              {/* Subtle rim light effect */}
+              <div className="absolute inset-[5%] bg-gradient-to-t from-transparent via-cyan-500/8 to-primary-400/10 rounded-full blur-[40px] pointer-events-none" />
+              
+              {/* Main image with layered linear masks for perfect edge fading */}
+              <div
+                className="relative w-full h-full"
+                style={{
+                  maskImage: "linear-gradient(to bottom, black 50%, transparent 95%)",
+                  WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 95%)",
+                }}
+              >
+                <div
+                  className="relative w-full h-full"
+                  style={{
+                    maskImage: "linear-gradient(to right, transparent 0%, black 15%, black 100%)",
+                    WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 100%)",
+                  }}
+                >
                   <Image
-                    src={PERSONAL_INFO.avatarUrl}
+                    src="/profile.png"
                     alt={PERSONAL_INFO.name}
                     fill
                     priority
                     unoptimized
-                    className="object-cover rounded-full"
+                    className="object-cover object-top"
                   />
                 </div>
               </div>
             </div>
-
-            {/* Floating tech icons */}
-            {floatingIcons.map((item) => (
-                <motion.div
-                  key={item.label}
-                  className="absolute top-1/2 left-1/2 glass rounded-xl p-2.5 text-lg"
-                  style={{
-                    x: item.x - 20,
-                    y: item.y - 20,
-                  }}
-                  animate={{
-                    y: [item.y - 20, item.y - 30, item.y - 20],
-                  }}
-                  transition={{
-                    duration: 3,
-                    delay: item.delay,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  {item.icon}
-                </motion.div>
-              ))}
           </motion.div>
         </div>
       </div>
