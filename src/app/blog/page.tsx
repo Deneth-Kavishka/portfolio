@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -36,35 +37,50 @@ export default function BlogPage() {
         <div className="grid gap-8">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <article className="glass rounded-2xl p-6 md:p-8 transition-all duration-300 hover:border-primary-500/30 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] group">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full text-xs bg-primary-500/10 text-primary-400 border border-primary-500/20"
-                    >
-                      {tag}
+              <article className="glass rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-500/30 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] group">
+                {/* Cover Image */}
+                {post.coverImage && (
+                  <div className="relative h-48 md:h-56 overflow-hidden">
+                    <Image
+                      src={post.coverImage}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-500/80 via-dark-500/20 to-transparent" />
+                  </div>
+                )}
+
+                <div className="p-6 md:p-8">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 rounded-full text-xs bg-primary-500/10 text-primary-400 border border-primary-500/20"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h2 className="text-xl md:text-2xl font-bold text-text-primary group-hover:text-primary-400 transition-colors mb-3">
+                    {post.title}
+                  </h2>
+
+                  <p className="text-text-secondary leading-relaxed mb-4">
+                    {post.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between text-sm text-text-muted">
+                    <span>
+                      {new Date(post.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
                     </span>
-                  ))}
-                </div>
-
-                <h2 className="text-xl md:text-2xl font-bold text-text-primary group-hover:text-primary-400 transition-colors mb-3">
-                  {post.title}
-                </h2>
-
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  {post.excerpt}
-                </p>
-
-                <div className="flex items-center justify-between text-sm text-text-muted">
-                  <span>
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </span>
-                  <span>{post.readTime}</span>
+                    <span>{post.readTime}</span>
+                  </div>
                 </div>
               </article>
             </Link>

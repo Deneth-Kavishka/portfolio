@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { HiXMark } from "react-icons/hi2";
@@ -66,24 +67,41 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+       {/*  <div className="text-xl font-bold gradient-text font-dealoras tracking-wider animate-pulse">
+          DK
+        </div>*/}
           {/* Logo */}
           {isHomePage ? (
             <motion.button
               onClick={() => handleNavClick("hero")}
-              className="text-2xl text-gradient font-bold cursor-pointer font-dealoras tracking-wider"
+              className="cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              DK
+              <Image
+                src="/logo.png"
+                alt="DK Logo"
+                width={56}
+                height={56}
+                className="w-14 h-14 object-contain drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]"
+                priority
+              />
             </motion.button>
           ) : (
             <Link href="/">
               <motion.span
-                className="text-3xl font-bold cursor-pointer font-dealoras tracking-wider"
+                className="cursor-pointer inline-block"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                DK
+                <Image
+                  src="/logo.png"
+                  alt="DK Logo"
+                  width={56}
+                  height={56}
+                  className="w-14 h-14 object-contain drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]"
+                  priority
+                />
               </motion.span>
             </Link>
           )}

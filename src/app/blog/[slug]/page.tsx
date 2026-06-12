@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 
@@ -36,7 +37,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  // Simple markdown-like rendering
+  // Enhanced markdown-like rendering
   const renderContent = (content: string) => {
     return content
       .split("\n\n")
@@ -64,6 +65,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </h3>
           );
         }
+        if (block.startsWith("#### ")) {
+          return (
+            <h4
+              key={i}
+              className="text-lg font-semibold text-text-primary mt-6 mb-2"
+            >
+              {block.replace("#### ", "")}
+            </h4>
+          );
+        }
+
+        // Horizontal rules
+        if (block === "---" || block === "***" || block === "___") {
+          return (
+            <div
+              key={i}
+              className="h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent my-8"
+            />
+          );
+        }
 
         // Code blocks
         if (block.startsWith("```")) {
@@ -86,6 +107,90 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           );
         }
 
+        // Blockquotes
+        if (block.startsWith("> ")) {
+          const quoteContent = block
+            .split("\n")
+            .map((l) => l.replace(/^>\s?/, ""))
+            .join("\n");
+          return (
+            <blockquote
+              key={i}
+              className="my-6 pl-4 border-l-2 border-primary-500/50 text-text-secondary italic"
+              dangerouslySetInnerHTML={{
+                __html: quoteContent
+                  .replace(
+                    /\*\*(.*?)\*\*/g,
+                    '<strong class="text-text-primary font-semibold not-italic">$1</strong>'
+                  )
+                  .replace(
+                    /`([^`]+)`/g,
+                    '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm not-italic">$1</code>'
+                  ),
+              }}
+            />
+          );
+        }
+
+        // Tables
+        if (block.includes("|") && block.includes("---")) {
+          const rows = block
+            .split("\n")
+            .filter((r) => r.trim())
+            .map((r) =>
+              r
+                .split("|")
+                .filter((c) => c.trim())
+                .map((c) => c.trim())
+            );
+          const headerRow = rows[0];
+          const dataRows = rows.slice(2); // skip header and separator
+          return (
+            <div key={i} className="my-6 overflow-x-auto">
+              <table className="w-full border-collapse text-sm">
+                <thead>
+                  <tr>
+                    {headerRow.map((cell, j) => (
+                      <th
+                        key={j}
+                        className="px-4 py-3 text-left text-text-primary font-semibold border-b border-white/10 bg-dark-300/50"
+                      >
+                        {cell}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {dataRows.map((row, ri) => (
+                    <tr
+                      key={ri}
+                      className="border-b border-white/5 hover:bg-white/[0.02]"
+                    >
+                      {row.map((cell, ci) => (
+                        <td
+                          key={ci}
+                          className="px-4 py-3 text-text-secondary"
+                          dangerouslySetInnerHTML={{
+                            __html: cell
+                              .replace(
+                                /\*\*(.*?)\*\*/g,
+                                '<strong class="text-text-primary font-semibold">$1</strong>'
+                              )
+                              .replace(
+                                /`([^`]+)`/g,
+                                '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm">$1</code>'
+                              ),
+                          }}
+                        />
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
         // Bullet lists
         if (block.startsWith("- ")) {
           const items = block.split("\n").filter((l) => l.startsWith("- "));
@@ -104,6 +209,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         .replace(
                           /\*\*(.*?)\*\*/g,
                           '<strong class="text-text-primary font-semibold">$1</strong>'
+                        )
+                        .replace(
+                          /`([^`]+)`/g,
+                          '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm">$1</code>'
                         ),
                     }}
                   />
@@ -128,6 +237,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       .replace(
                         /\*\*(.*?)\*\*/g,
                         '<strong class="text-text-primary font-semibold">$1</strong>'
+                      )
+                      .replace(
+                        /`([^`]+)`/g,
+                        '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm">$1</code>'
                       ),
                   }}
                 />
@@ -167,6 +280,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         >
           ← All Posts
         </Link>
+
+        {/* Cover Image */}
+        {post.coverImage && (
+          <div className="relative w-full h-48 md:h-64 lg:h-72 rounded-2xl overflow-hidden mb-10">
+            <Image
+              src={post.coverImage}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-500/60 to-transparent" />
+          </div>
+        )}
 
         {/* Post header */}
         <div className="mb-10">

@@ -5,6 +5,7 @@
 // Categories are defined in constants.ts as PROJECT_CATEGORIES.
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt, FaStar } from "react-icons/fa";
 import { PROJECTS } from "@/lib/constants";
 // import { PROJECT_CATEGORIES } from "@/lib/constants"; // Uncomment for category filter
@@ -67,12 +68,21 @@ export default function Projects() {
               >
                 <GlassCard hover glow padding="none" className="group overflow-hidden">
                   {/* Image area */}
-                  <div className="relative h-48 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-primary-500/10 via-dark-200 to-accent-500/10 flex items-center justify-center">
-                      <span className="text-5xl opacity-20 gradient-text font-bold">
-                        {project.title.split(" ").map(w => w[0]).join("").slice(0, 3)}
-                      </span>
-                    </div>
+                  <div className="relative h-48 overflow-hidden bg-dark-300">
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary-500/10 via-dark-200 to-accent-500/10 flex items-center justify-center">
+                        <span className="text-5xl opacity-20 gradient-text font-bold">
+                          {project.title.split(" ").map(w => w[0]).join("").slice(0, 3)}
+                        </span>
+                      </div>
+                    )}
 
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-dark-500/80 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300">

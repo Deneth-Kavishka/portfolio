@@ -283,7 +283,7 @@ export const PROJECTS: Project[] = [
     title: "HeritaGo - All in one Tourist Guide web Application",
     description:
       "HeritaGo is an all-in-one tourist guide web application that provides comprehensive information about tourist attractions, hotels, restaurants, and local experiences. It features an AI-powered chatbot assistant that offers personalized recommendations and travel tips based on user preferences.",
-    image: "/projects/heritage-tourism.jpg",
+    image: "/projects/heritago.png",
     techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL"],
     category: "AI/ML",
     liveUrl: "",
@@ -295,7 +295,7 @@ export const PROJECTS: Project[] = [
     title: "CafeYC - Full automated POS + E - Commerce system for Cafe Y C",
     description:
       "A comprehensive e-commerce platform for Cafe Y C, featuring a full automated POS system, order management, inventory management, and customer engagement tools.",
-    image: "/projects/e-commerce.jpg",
+    image: "/projects/cafeyc.png",
     techStack: ["HTML", "CSS", "JavaScript", "MySQL", "PHP"],
     category: "Web",
     liveUrl: "",
