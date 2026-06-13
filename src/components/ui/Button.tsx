@@ -41,9 +41,12 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      "bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-400 hover:to-primary-500 hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]",
+      // "bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-400 hover:to-primary-500 hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]",
+       "bg-gradient-to-r from-[#003366] via-[#0088cc] to-[#00e5ff] text-white hover:opacity-90 hover:shadow-[0_0_30px_rgba(0,229,255,0.4)]",
+      //"bg-[#0088cc] text-white hover:bg-[#0077b6] hover:shadow-[0_0_20px_rgba(0,136,204,0.4)]",
     outline:
-      "bg-transparent border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 hover:border-primary-400",
+      // "bg-transparent border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 hover:border-primary-400",
+      "bg-transparent border border-[#0088cc]/50 text-[#0088cc] hover:bg-[#0088cc]/10 hover:border-[#0088cc]",
     ghost:
       "bg-transparent text-text-secondary hover:text-text-primary hover:bg-white/5",
   };

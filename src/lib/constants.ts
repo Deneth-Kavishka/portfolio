@@ -271,7 +271,7 @@ export const PROJECTS: Project[] = [
     title: "Developer Portfolio Website",
     description:
       "This premium portfolio website built with Next.js 15, featuring particle backgrounds, glassmorphism design, and smooth animations.",
-    image: "/projects/portfolio.png",
+    image: "/projects/portfolioNew.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web",
     liveUrl: "",

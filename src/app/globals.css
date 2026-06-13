@@ -7,7 +7,8 @@
 
 /* ── Theme Tokens ──────────────────────────────────────────── */
 @theme inline {
-  /* Primary Palette — Indigo to Violet */
+  /* Primary Palette — Indigo to Violet (Previous) */
+  /*
   --color-primary-50: #eef2ff;
   --color-primary-100: #e0e7ff;
   --color-primary-200: #c7d2fe;
@@ -18,11 +19,31 @@
   --color-primary-700: #4338ca;
   --color-primary-800: #3730a3;
   --color-primary-900: #312e81;
+  */
 
-  /* Accent — Cyan / Teal */
+  /* Primary Palette — Deep Blue to Cyan (New) */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0088cc;
+  --color-primary-600: #0077b6;
+  --color-primary-700: #005f9e;
+  --color-primary-800: #004b87;
+  --color-primary-900: #003366;
+
+  /* Accent — Cyan / Teal (Previous) */
+  /*
   --color-accent-400: #22d3ee;
   --color-accent-500: #06b6d4;
   --color-accent-600: #0891b2;
+  */
+
+  /* Accent — Bright Aqua/Cyan (New) */
+  --color-accent-400: #33eeff;
+  --color-accent-500: #00e5ff;
+  --color-accent-600: #00b8cc;
 
   /* Background shades */
   --color-dark-50: #1a1a2e;
@@ -54,9 +75,15 @@
 :root {
   --background: #0a0a0f;
   --foreground: #f1f5f9;
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
-  --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
-  --gradient-glow: linear-gradient(135deg, #6366f1 0%, #06b6d4 50%, #8b5cf6 100%);
+  /* --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%); */
+  --gradient-primary: linear-gradient(135deg, #003366 0%, #0088cc 50%, #00e5ff 100%);
+  
+  /* --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%); */
+  --gradient-accent: linear-gradient(135deg, #00e5ff 0%, #0088cc 100%);
+  
+  /* --gradient-glow: linear-gradient(135deg, #6366f1 0%, #06b6d4 50%, #8b5cf6 100%); */
+  --gradient-glow: linear-gradient(135deg, #003366 0%, #00e5ff 50%, #0088cc 100%);
+  
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -69,6 +96,20 @@
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(0, 0, 0, 0.08);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  /* Override Text Colors */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+
+  /* Override Dark Backgrounds to Light Variations */
+  --color-dark-50: #ffffff;
+  --color-dark-100: #f8fafc;
+  --color-dark-200: #f1f5f9;
+  --color-dark-300: #e2e8f0;
+  --color-dark-400: #cbd5e1;
+  --color-dark-500: #f8fafc;
+  --color-dark-600: #f1f5f9;
 }
 
 /* ── Base Styles ───────────────────────────────────────────── */

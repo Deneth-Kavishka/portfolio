@@ -74,7 +74,8 @@ export default function Hero() {
             </motion.p>*/}
 
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold gradient-text leading-tight mb-4"
+             /*className="text-5xl md:text-6xl lg:text-7xl font-bold gradient-text leading-tight mb-4"*/ //primary gradient text
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#003366] via-[#0088cc] to-[#00e5ff] leading-tight mb-4" //updated to a more vibrant gradient
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
