@@ -108,7 +108,7 @@ export default function Navbar() {
           )}
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className={isHomePage ? "hidden md:flex items-center gap-1" : "hidden"}>
             {NAV_ITEMS.map((item) => {
               const isPageLink = item.href.startsWith("/");
               const active = isActive(item.href);
@@ -174,7 +174,7 @@ export default function Navbar() {
             {/* Mobile hamburger */}
             <motion.button
               onClick={() => setMobileOpen(true)}
-              className="md:hidden p-2.5 rounded-xl glass text-text-secondary cursor-pointer"
+              className={`${isHomePage ? "md:hidden " : ""}p-2.5 rounded-xl glass text-text-secondary cursor-pointer`}
               whileTap={{ scale: 0.9 }}
               aria-label="Open menu"
             >
@@ -189,14 +189,14 @@ export default function Navbar() {
         {mobileOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm md:hidden"
+              className={`fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm ${isHomePage ? "md:hidden" : ""}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
             />
             <motion.div
-              className="fixed top-0 right-0 bottom-0 z-[70] w-72 glass-strong md:hidden flex flex-col"
+              className={`fixed top-0 right-0 bottom-0 z-[70] w-72 glass-strong flex flex-col ${isHomePage ? "md:hidden" : ""}`}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
