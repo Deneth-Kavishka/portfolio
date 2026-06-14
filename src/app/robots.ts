@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://deneth-kavishka/sitemap.xml",
+    sitemap: "https://deneth.dev/sitemap.xml",
   };
 }
