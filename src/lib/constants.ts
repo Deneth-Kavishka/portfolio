@@ -321,7 +321,7 @@ export const PROJECTS: Project[] = [
     image: "/projects/portfolioNew.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     category: "Web",
-    liveUrl: "",
+    liveUrl: "https://denethkavishka.vercel.app/",
     githubUrl: "https://github.com/Deneth-Kavishka/portfolio",
     featured: false,
   },
