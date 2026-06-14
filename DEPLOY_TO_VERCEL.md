@@ -49,23 +49,23 @@ git push -u origin main
 
 Vercel auto-detects Next.js. Verify these settings:
 
-| Setting | Value |
-|---------|-------|
-| **Framework Preset** | Next.js |
-| **Root Directory** | `./` (default) |
-| **Build Command** | `next build` (auto-detected) |
-| **Output Directory** | `.next` (auto-detected) |
-| **Node.js Version** | 20.x |
+| Setting              | Value                        |
+| -------------------- | ---------------------------- |
+| **Framework Preset** | Next.js                      |
+| **Root Directory**   | `./` (default)               |
+| **Build Command**    | `next build` (auto-detected) |
+| **Output Directory** | `.next` (auto-detected)      |
+| **Node.js Version**  | 20.x                         |
 
 ### Environment Variables
 
 If you're using EmailJS, add these environment variables:
 
-| Variable | Value |
-|----------|-------|
-| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | Your EmailJS service ID |
+| Variable                          | Value                    |
+| --------------------------------- | ------------------------ |
+| `NEXT_PUBLIC_EMAILJS_SERVICE_ID`  | Your EmailJS service ID  |
 | `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | Your EmailJS template ID |
-| `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` | Your EmailJS public key |
+| `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`  | Your EmailJS public key  |
 
 Click **"Add"** for each variable.
 
@@ -87,11 +87,11 @@ You'll get a URL like: `https://portfolio-xxxxx.vercel.app`
 ## Step 5: Custom Domain (Optional)
 
 1. Go to your project **Settings → Domains**
-2. Enter your custom domain (e.g., `deneth.dev`)
+2. Enter your custom domain (e.g., `deneth-kavishka`)
 3. Click **"Add"**
 4. Update your domain's DNS records:
-   - **For root domain** (`deneth.dev`): Add an `A` record pointing to `76.76.21.21`
-   - **For www subdomain** (`www.deneth.dev`): Add a `CNAME` record pointing to `cname.vercel-dns.com`
+   - **For root domain** (`deneth-kavishka`): Add an `A` record pointing to `76.76.21.21`
+   - **For www subdomain** (`www.deneth-kavishka`): Add a `CNAME` record pointing to `cname.vercel-dns.com`
 5. Wait for DNS propagation (usually 5-30 minutes)
 6. Vercel auto-provisions SSL/HTTPS ✅
 
@@ -113,7 +113,7 @@ Analytics is already integrated in the code (`@vercel/analytics`). To enable the
 Every push to `main` will automatically trigger a new deployment. Vercel also creates **preview deployments** for pull requests.
 
 ```
-main branch  →  Production deployment (deneth.dev)
+main branch  →  Production deployment (deneth-kavishka)
 PR branches  →  Preview deployments (unique URL)
 ```
 
@@ -145,19 +145,23 @@ vercel ls
 ## Troubleshooting
 
 ### Build fails
+
 - Check the build logs on Vercel dashboard
 - Ensure `npm run build` works locally before pushing
 - Check Node.js version matches (use 20.x)
 
 ### Environment variables not working
+
 - Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser
 - After adding/changing env vars, **redeploy** the project
 
 ### Slow initial page load
+
 - Your portfolio uses code-splitting and lazy loading — first load after deploy may be slightly slow (cold start)
 - Subsequent visits use Vercel's CDN cache and will be fast
 
 ### Custom domain not working
+
 - Verify DNS records are correct
 - Wait up to 48 hours for DNS propagation
 - Check Vercel's domain configuration page for errors

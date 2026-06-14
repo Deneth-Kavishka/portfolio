@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold gradient-text mb-4">
               {PERSONAL_INFO.firstName}
-              <span className="text-text-primary">.dev</span>
+              <span className="text-text-primary">-Kavishka</span>
             </h3>
             <p className="text-text-secondary text-sm leading-relaxed">
               {PERSONAL_INFO.shortBio}

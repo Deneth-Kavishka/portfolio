@@ -58,19 +58,27 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: "https://www.linkedin.com/in/deneth-kavishka-338288284/",
     icon: "FaLinkedinIn",
   },
-  { name: "GitHub", url: "https://github.com/Deneth-Kavishka", icon: "FaGithub" },
+  {
+    name: "GitHub",
+    url: "https://github.com/Deneth-Kavishka",
+    icon: "FaGithub",
+  },
   { name: "Twitter", url: "https://x.com/Deneth_kavish", icon: "FaTwitter" },
-  { name: "Facebook", url: "https://web.facebook.com/deneth.kavishka.7", icon: "FaFacebookF" },
+  {
+    name: "Facebook",
+    url: "https://web.facebook.com/deneth.kavishka.7",
+    icon: "FaFacebookF",
+  },
   {
     name: "Instagram",
     url: "https://instagram.com/deneth_kavishka_",
     icon: "FaInstagram",
   },
   // { name: "Fiverr", url: "https://fiverr.com/deneth", icon: "SiFiverr" },
-  { 
-    name: "WhatsApp", 
-    url: "https://wa.me/94769146080?text=Hi%20Deneth!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.", 
-    icon: "FaWhatsapp" 
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/94769146080?text=Hi%20Deneth!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.",
+    icon: "FaWhatsapp",
   },
   {
     name: "Email",
@@ -111,7 +119,7 @@ export const SKILLS: Skill[] = [
   { name: "Laravel", level: 90, icon: "FaLaravel", category: "Backend" },
   { name: "Express.js", level: 88, icon: "SiExpress", category: "Backend" },
   { name: "Python", level: 85, icon: "FaPython", category: "Backend" },
-  { name: "Java", level: 85, icon: "FaJava", category: "Backend"},
+  { name: "Java", level: 85, icon: "FaJava", category: "Backend" },
   { name: "R", level: 85, icon: "SiR", category: "Backend" },
   { name: "Spring Boot", level: 75, icon: "SiSpringboot", category: "Backend" },
   { name: "REST APIs", level: 85, icon: "SiFastapi", category: "Backend" },
@@ -131,10 +139,30 @@ export const SKILLS: Skill[] = [
 
   // Robotics & IoT
   { name: "Arduino", level: 95, icon: "SiArduino", category: "Robotics & IoT" },
-  { name: "Motor Control", level: 90, icon: "FaCogs", category: "Robotics & IoT" },
-  { name: "RFID Systems", level: 90, icon: "FaIdBadge", category: "Robotics & IoT" },
-  { name: "Computer Vision", level: 85, icon: "SiOpencv", category: "Robotics & IoT" },
-  { name: "AI Intelligence Chess", level: 85, icon: "FaChess", category: "Robotics & IoT" },
+  {
+    name: "Motor Control",
+    level: 90,
+    icon: "FaCogs",
+    category: "Robotics & IoT",
+  },
+  {
+    name: "RFID Systems",
+    level: 90,
+    icon: "FaIdBadge",
+    category: "Robotics & IoT",
+  },
+  {
+    name: "Computer Vision",
+    level: 85,
+    icon: "SiOpencv",
+    category: "Robotics & IoT",
+  },
+  {
+    name: "AI Intelligence Chess",
+    level: 85,
+    icon: "FaChess",
+    category: "Robotics & IoT",
+  },
   { name: "ESP32", level: 85, icon: "SiEspressif", category: "Robotics & IoT" },
   {
     name: "ESP8266",
@@ -142,8 +170,18 @@ export const SKILLS: Skill[] = [
     icon: "SiEspressif",
     category: "Robotics & IoT",
   },
-  { name: "Face Recognition", level: 85, icon: "SiOpencv", category: "Robotics & IoT" },
-  { name: "Robotic arm control", level: 80, icon: "FaCogs", category: "Robotics & IoT" },
+  {
+    name: "Face Recognition",
+    level: 85,
+    icon: "SiOpencv",
+    category: "Robotics & IoT",
+  },
+  {
+    name: "Robotic arm control",
+    level: 80,
+    icon: "FaCogs",
+    category: "Robotics & IoT",
+  },
   { name: "Embedded C", level: 80, icon: "SiC", category: "Robotics & IoT" },
   {
     name: "Raspberry Pi",
@@ -168,7 +206,7 @@ export const SKILLS: Skill[] = [
   // Programming Languages
   { name: "Java", level: 95, icon: "FaJava", category: "Languages" },
   { name: "PHP", level: 95, icon: "FaPhp", category: "Languages" },
-    {
+  {
     name: "JavaScript",
     level: 95,
     icon: "SiJavascript",
@@ -478,7 +516,8 @@ export const TIMELINE: TimelineItem[] = [
   },
   {
     year: "2025",
-    title: "Microsoft Certified: Discover Microsoft AI for leaders in sustainability.",
+    title:
+      "Microsoft Certified: Discover Microsoft AI for leaders in sustainability.",
     subtitle: "Microsoft Learn",
     description:
       "Achieved the 'Microsoft Certified: Discover Microsoft AI for leaders in sustainability' certification, demonstrating knowledge of AI applications in sustainability initiatives and understanding how to leverage Microsoft AI technologies for environmental impact.",
@@ -572,7 +611,7 @@ export const SITE_CONFIG = {
   title: "Deneth Kavishka | Software Engineer & Full-Stack Developer",
   description:
     "Portfolio of Deneth Kavishka — Software Engineer, Full-Stack Web Developer, Robotics & IoT Developer, University IT Instructor. Building elegant digital solutions.",
-  url: "https://deneth.dev",
+  url: "https://deneth-kavishka",
   ogImage: "/og-image.png",
   twitterHandle: "@deneth",
 };

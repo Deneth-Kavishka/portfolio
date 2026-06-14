@@ -29,7 +29,7 @@ const dealorasFont = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://deneth.dev"),
+  metadataBase: new URL("https://deneth-kavishka"),
   title: {
     default: "Deneth Kavishka | Software Engineer & Full-Stack Developer",
     template: "%s | Deneth Kavishka",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://deneth.dev",
+    url: "https://deneth-kavishka",
     siteName: "Deneth Kavishka Portfolio",
     title: "Deneth Kavishka | Software Engineer & Full-Stack Developer",
     description:
@@ -107,7 +107,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Deneth Kavishka",
-              url: "https://deneth.dev",
+              url: "https://deneth-kavishka",
               jobTitle: "Software Engineer",
               worksFor: {
                 "@type": "Organization",
