@@ -124,8 +124,9 @@ export default function Skills() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
                   activeCategory === cat
-                    ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-[0_0_20px_rgba(99,102,241,0.3)]"
-                    : "glass text-text-secondary hover:text-text-primary"
+                   //</div> ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-[0_0_20px_rgba(99,102,241,0.3)]"
+                   ? "bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-[0_0_20px_rgba(0,136,204,0.3)]" 
+                   : "glass text-text-secondary hover:text-text-primary"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

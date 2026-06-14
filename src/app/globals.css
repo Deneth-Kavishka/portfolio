@@ -110,6 +110,11 @@
   --color-dark-400: #cbd5e1;
   --color-dark-500: #f8fafc;
   --color-dark-600: #f1f5f9;
+
+  /* Override Surface Backgrounds */
+  --color-surface-light: rgba(0, 0, 0, 0.03);
+  --color-surface-medium: rgba(0, 0, 0, 0.06);
+  --color-surface-strong: rgba(0, 0, 0, 0.1);
 }
 
 /* ── Base Styles ───────────────────────────────────────────── */
@@ -406,3 +411,16 @@ select:focus {
   background: rgba(99, 102, 241, 0.2);
   color: #0f172a;
 }
+
+/* Force Tailwind Utilities to flip in Light Mode */
+[data-theme="light"] .text-text-primary { color: #0f172a !important; }
+[data-theme="light"] .text-text-secondary { color: #475569 !important; }
+[data-theme="light"] .text-text-muted { color: #64748b !important; }
+
+[data-theme="light"] .bg-dark-50 { background-color: #ffffff !important; }
+[data-theme="light"] .bg-dark-100 { background-color: #f8fafc !important; }
+[data-theme="light"] .bg-dark-200 { background-color: #f1f5f9 !important; }
+[data-theme="light"] .bg-dark-300 { background-color: #e2e8f0 !important; }
+[data-theme="light"] .bg-dark-400 { background-color: #cbd5e1 !important; }
+[data-theme="light"] .bg-dark-500 { background-color: #f8fafc !important; }
+[data-theme="light"] .bg-dark-600 { background-color: #f1f5f9 !important; }

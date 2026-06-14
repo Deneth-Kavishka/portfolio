@@ -29,8 +29,9 @@ export default function GlassCard({
     "glass rounded-2xl transition-all duration-300",
     hover && "glass-hover cursor-default",
     glow &&
-      "hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] hover:border-primary-500/30",
-    paddingClasses[padding],
+      //"hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] hover:border-primary-500/30",
+      "hover:shadow-[0_0_30px_rgba(0,136,204,0.15)] hover:border-primary-500/30",
+      paddingClasses[padding],
     className
   );
 

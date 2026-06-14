@@ -12,7 +12,7 @@ export default function Badge({
   className,
 }: BadgeProps) {
   const variantClasses = {
-    default: "bg-white/5 text-text-secondary border border-white/5",
+    default: "bg-surface-light text-text-secondary border border-[var(--glass-border)]",
     gradient:
       "bg-gradient-to-r from-primary-500/20 to-accent-500/20 text-primary-300 border border-primary-500/20",
     outline: "bg-transparent border border-primary-500/30 text-primary-400",

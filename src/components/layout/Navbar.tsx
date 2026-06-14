@@ -99,8 +99,9 @@ export default function Navbar() {
                   alt="DK Logo"
                   width={56}
                   height={56}
-                  className="w-14 h-14 object-contain drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]"
-                  priority
+                 // className="w-14 h-14 object-contain drop-shadow-[0_0_8px_rgba(99,102,241,0.4)]"
+                 className="w-14 h-14 object-contain drop-shadow-[0_0_8px_rgba(0,136,204,0.4)]" 
+                 priority
                 />
               </motion.span>
             </Link>
@@ -201,7 +202,7 @@ export default function Navbar() {
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
             >
-              <div className="flex items-center justify-between p-6 border-b border-white/5">
+              <div className="flex items-center justify-between p-6 border-b border-[var(--glass-border)]">
                 <span className="text-lg font-bold gradient-text">Menu</span>
                 <motion.button
                   onClick={() => setMobileOpen(false)}

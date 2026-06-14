@@ -10,7 +10,8 @@ export default function Loading() {
             alt="DK Logo"
             width={112}
             height={112}
-            className="w-[112px] h-[112px] object-contain drop-shadow-[0_0_16px_rgba(99,102,241,0.5)]"
+            //className="w-[112px] h-[112px] object-contain drop-shadow-[0_0_16px_rgba(99,102,241,0.5)]"
+           className="w-[112px] h-[112px] object-contain drop-shadow-[0_0_16px_rgba(0,136,204,0.5)]"
           />
         </div>
 

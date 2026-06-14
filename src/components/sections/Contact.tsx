@@ -90,7 +90,8 @@ export default function Contact() {
   ];
 
   const inputClasses =
-    "w-full bg-dark-100/50 border border-white/5 rounded-xl px-4 py-3 text-text-primary placeholder:text-text-muted focus:border-primary-500/50 focus:outline-none transition-colors";
+  //"w-full bg-dark-100/50 border border-white/5 rounded-xl px-4 py-3 text-text-primary placeholder:text-text-muted focus:border-primary-500/50 focus:outline-none transition-colors";
+    "w-full bg-surface-medium dark:bg-dark-100/50 border border-[var(--glass-border)] rounded-xl px-4 py-3 text-text-primary placeholder:text-text-muted focus:border-primary-500/50 focus:outline-none transition-colors";
 
   return (
     <section id="contact" className="relative">

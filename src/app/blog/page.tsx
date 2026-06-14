@@ -13,7 +13,7 @@ export default function BlogPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <div className="min-h-screen bg-dark-500">
+    <div className="min-h-screen">
       {/* Header */}
       <div className="pt-28 pb-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -37,7 +37,7 @@ export default function BlogPage() {
         <div className="grid gap-8">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <article className="glass rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-500/30 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] group">
+              <article className="glass rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary-500/30 hover:shadow-[0_0_30px_rgba(0,136,204,0.15)] group">
                 {/* Cover Image */}
                 {post.coverImage && (
                   <div className="relative h-48 md:h-56 overflow-hidden">

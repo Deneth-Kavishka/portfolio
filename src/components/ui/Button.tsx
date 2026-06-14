@@ -48,7 +48,7 @@ export default function Button({
       // "bg-transparent border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 hover:border-primary-400",
       "bg-transparent border border-[#0088cc]/50 text-[#0088cc] hover:bg-[#0088cc]/10 hover:border-[#0088cc]",
     ghost:
-      "bg-transparent text-text-secondary hover:text-text-primary hover:bg-white/5",
+      "bg-transparent text-text-secondary hover:text-text-primary hover:bg-surface-light",
   };
 
   const classes = cn(

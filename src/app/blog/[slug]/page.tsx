@@ -39,6 +39,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // Enhanced markdown-like rendering
   const renderContent = (content: string) => {
+    const formatInline = (text: string, isQuote = false) => {
+      return text
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(
+          /\*\*(.*?)\*\*/g,
+          `<strong class="text-text-primary font-semibold ${isQuote ? "not-italic" : ""} ">$1</strong>`
+        )
+        .replace(
+          /`([^`]+)`/g,
+          `<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm ${isQuote ? "not-italic" : ""} ">$1</code>`
+        );
+    };
+
     return content
       .split("\n\n")
       .map((block) => block.trim())
@@ -94,12 +108,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           return (
             <div key={i} className="my-6">
               {lang && (
-                <div className="bg-dark-200 text-xs text-text-muted px-4 py-2 rounded-t-xl border border-b-0 border-white/5">
+                <div className="bg-dark-200 text-xs text-text-muted px-4 py-2 rounded-t-xl border border-b-0 border-[var(--glass-border)]">
                   {lang}
                 </div>
               )}
               <pre
-                className={`bg-dark-300/50 p-4 overflow-x-auto text-sm text-text-secondary border border-white/5 ${lang ? "rounded-b-xl" : "rounded-xl"}`}
+                className={`bg-dark-300/50 p-4 overflow-x-auto text-sm text-text-secondary border border-[var(--glass-border)] ${lang ? "rounded-b-xl" : "rounded-xl"}`}
               >
                 <code>{code}</code>
               </pre>
@@ -118,15 +132,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               key={i}
               className="my-6 pl-4 border-l-2 border-primary-500/50 text-text-secondary italic"
               dangerouslySetInnerHTML={{
-                __html: quoteContent
-                  .replace(
-                    /\*\*(.*?)\*\*/g,
-                    '<strong class="text-text-primary font-semibold not-italic">$1</strong>'
-                  )
-                  .replace(
-                    /`([^`]+)`/g,
-                    '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm not-italic">$1</code>'
-                  ),
+                __html: formatInline(quoteContent, true),
               }}
             />
           );
@@ -153,7 +159,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     {headerRow.map((cell, j) => (
                       <th
                         key={j}
-                        className="px-4 py-3 text-left text-text-primary font-semibold border-b border-white/10 bg-dark-300/50"
+                        className="px-4 py-3 text-left text-text-primary font-semibold border-b border-[var(--glass-border)] bg-dark-300/50"
                       >
                         {cell}
                       </th>
@@ -164,22 +170,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {dataRows.map((row, ri) => (
                     <tr
                       key={ri}
-                      className="border-b border-white/5 hover:bg-white/[0.02]"
+                      className="border-b border-[var(--glass-border)] hover:bg-surface-light"
                     >
                       {row.map((cell, ci) => (
                         <td
                           key={ci}
                           className="px-4 py-3 text-text-secondary"
                           dangerouslySetInnerHTML={{
-                            __html: cell
-                              .replace(
-                                /\*\*(.*?)\*\*/g,
-                                '<strong class="text-text-primary font-semibold">$1</strong>'
-                              )
-                              .replace(
-                                /`([^`]+)`/g,
-                                '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm">$1</code>'
-                              ),
+                            __html: formatInline(cell),
                           }}
                         />
                       ))}
@@ -204,16 +202,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <span className="text-primary-400 mt-1.5 text-xs">●</span>
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: item
-                        .replace("- ", "")
-                        .replace(
-                          /\*\*(.*?)\*\*/g,
-                          '<strong class="text-text-primary font-semibold">$1</strong>'
-                        )
-                        .replace(
-                          /`([^`]+)`/g,
-                          '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm">$1</code>'
-                        ),
+                      __html: formatInline(item.replace("- ", "")),
                     }}
                   />
                 </li>
@@ -232,16 +221,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   key={j}
                   className="text-text-secondary leading-relaxed"
                   dangerouslySetInnerHTML={{
-                    __html: item
-                      .replace(/^\d+\.\s/, "")
-                      .replace(
-                        /\*\*(.*?)\*\*/g,
-                        '<strong class="text-text-primary font-semibold">$1</strong>'
-                      )
-                      .replace(
-                        /`([^`]+)`/g,
-                        '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm">$1</code>'
-                      ),
+                    __html: formatInline(item.replace(/^\d+\.\s/, "")),
                   }}
                 />
               ))}
@@ -255,15 +235,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             key={i}
             className="text-text-secondary leading-relaxed my-4"
             dangerouslySetInnerHTML={{
-              __html: block
-                .replace(
-                  /\*\*(.*?)\*\*/g,
-                  '<strong class="text-text-primary font-semibold">$1</strong>'
-                )
-                .replace(
-                  /`([^`]+)`/g,
-                  '<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm">$1</code>'
-                ),
+              __html: formatInline(block),
             }}
           />
         );
@@ -271,7 +243,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-dark-500">
+    <div className="min-h-screen">
       <div className="max-w-3xl mx-auto px-6 pt-28 pb-24">
         {/* Back to blog */}
         <Link
@@ -344,7 +316,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Link>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium hover:from-primary-400 hover:to-primary-500 transition-all hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0088cc] text-white font-medium hover:bg-[#0077b6] transition-all hover:shadow-[0_0_20px_rgba(0,136,204,0.4)]"
           >
             Home →
           </Link>

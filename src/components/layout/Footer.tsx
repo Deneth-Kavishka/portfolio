@@ -39,7 +39,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative border-t border-white/5">
+    <footer className="relative border-t border-[var(--glass-border)]">
       {/* Gradient top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500 to-transparent" />
 
