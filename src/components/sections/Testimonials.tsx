@@ -101,10 +101,10 @@ export default function Testimonials() {
                 {/* Author */}
                 <div className="flex items-center justify-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">
-                    {testimonial.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
+                    {testimonial?.name
+                      ?.split(" ")
+                      ?.map((n: string) => n[0])
+                      ?.join("")}
                   </div>
                   <div className="text-left">
                     <p className="font-bold text-text-primary">
