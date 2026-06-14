@@ -32,7 +32,7 @@ export default function Testimonials() {
   const testimonial = TESTIMONIALS[activeIndex];
 
   return (
-    <section id="testimonials" className="relative">
+    <section id="testimonials" className="relative overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="section-container">

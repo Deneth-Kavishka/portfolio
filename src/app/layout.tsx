@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "Deneth Kavishka Portfolio",
     title: "Deneth Kavishka | Software Engineer & Full-Stack Developer",
     description:
-      "Portfolio of Deneth Kavishka — Software Engineer, Full-Stack Web Developer, Robotics & IoT Developer, University IT Instructor.",
+      "Portfolio of Deneth Kavishka - Software Engineer, Full-Stack Web Developer, Robotics & IoT Developer, University IT Instructor.",
     images: [
       {
         url: "/og-image.png",

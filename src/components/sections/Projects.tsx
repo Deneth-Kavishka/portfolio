@@ -22,7 +22,7 @@ export default function Projects() {
   //   : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="relative">
+    <section id="projects" className="relative overflow-hidden">
       {/* Background orbs */}
       <div className="absolute top-1/2 -left-40 w-80 h-80 bg-primary-500/5 rounded-full blur-[120px] pointer-events-none" />
 

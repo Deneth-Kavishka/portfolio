@@ -94,7 +94,7 @@ export default function Contact() {
     "w-full bg-surface-medium dark:bg-dark-100/50 border border-[var(--glass-border)] rounded-xl px-4 py-3 text-text-primary placeholder:text-text-muted focus:border-primary-500/50 focus:outline-none transition-colors";
 
   return (
-    <section id="contact" className="relative">
+    <section id="contact" className="relative overflow-hidden">
       <div className="absolute top-1/3 -right-40 w-80 h-80 bg-primary-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="section-container">

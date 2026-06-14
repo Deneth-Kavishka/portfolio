@@ -12,7 +12,7 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "getting-started-with-nextjs-15",
-    title: "Getting Started with Next.js 15 — What's New?",
+    title: "Getting Started with Next.js 15 - What's New?",
     excerpt:
       "Explore the latest features in Next.js 15 including the improved App Router, React Server Components, Turbopack, Partial Prerendering, and performance enhancements that make it the best version yet.",
     content: `
@@ -24,7 +24,7 @@ In this post, I'll walk you through everything that's new, share real code examp
 
 ### Why Next.js 15 Matters
 
-The web development landscape moves fast, but Next.js has consistently stayed ahead of the curve. Version 15 isn't just an incremental update — it's a refinement of the architectural decisions introduced in Next.js 13 and 14, now battle-tested and production-ready. The App Router is more stable, React Server Components are the default, Turbopack is finally stable, and new features like Partial Prerendering blur the line between static and dynamic content.
+The web development landscape moves fast, but Next.js has consistently stayed ahead of the curve. Version 15 isn't just an incremental update - it's a refinement of the architectural decisions introduced in Next.js 13 and 14, now battle-tested and production-ready. The App Router is more stable, React Server Components are the default, Turbopack is finally stable, and new features like Partial Prerendering blur the line between static and dynamic content.
 
 If you've been hesitant to migrate from the Pages Router or from an older version, now is the time. Let me show you why.
 
@@ -379,7 +379,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <h1 className="text-4xl font-bold">
-        Welcome to Next.js 15! 🚀
+        Welcome to Next.js 15! 
       </h1>
     </div>
   );
@@ -449,7 +449,7 @@ If you're starting a new project in 2025, I can't recommend Next.js 15 highly en
 
 The web platform is evolving, and Next.js 15 keeps you right at the forefront. Give it a try, and I promise you'll never want to go back.
 
-Happy coding! 🚀
+Happy coding! 
     `.trim(),
     date: "2025-01-15",
     readTime: "12 min read",
@@ -493,8 +493,8 @@ Before we go further, let's compare the three most popular boards for beginners:
 | **Clock Speed** | 16 MHz | 80 MHz | 240 MHz |
 | **RAM** | 2 KB | 80 KB | 520 KB |
 | **Flash** | 32 KB | 4 MB | 4-16 MB |
-| **Wi-Fi** | ❌ None | ✅ 802.11 b/g/n | ✅ 802.11 b/g/n |
-| **Bluetooth** | ❌ None | ❌ None | ✅ BLE + Classic |
+| **Wi-Fi** | None | 802.11 b/g/n | 802.11 b/g/n |
+| **Bluetooth** | None | None | BLE + Classic |
 | **GPIO Pins** | 14 digital, 6 analog | 17 GPIO, 1 ADC | 34 GPIO, 18 ADC |
 | **Operating Voltage** | 5V | 3.3V | 3.3V |
 | **Price** | ~$10 | ~$3 | ~$5 |
@@ -889,7 +889,7 @@ Whether you're a web developer looking to explore hardware, a student learning e
 
 Start with the LED blink. Move to sensors. Connect to the cloud. Before you know it, you'll be building smart home systems and monitoring dashboards that impress everyone who sees them.
 
-The world of IoT is wide open — go build something awesome! ⚡
+The world of IoT is wide open — go build something awesome!
     `.trim(),
     date: "2025-02-20",
     readTime: "14 min read",
@@ -900,7 +900,7 @@ The world of IoT is wide open — go build something awesome! ⚡
     slug: "fullstack-developer-roadmap-2025",
     title: "Full-Stack Developer Roadmap for 2025",
     excerpt:
-      "A comprehensive 12-phase roadmap covering frontend, backend, databases, DevOps, testing, and soft skills — everything you need to become a job-ready full-stack developer in 2025.",
+      "A comprehensive 12-phase roadmap covering frontend, backend, databases, DevOps, testing, and soft skills - everything you need to become a job-ready full-stack developer in 2025.",
     content: `
 The demand for full-stack developers has never been higher, and the landscape has never been more exciting — or more overwhelming. With new frameworks, tools, and paradigms emerging every month, it's easy to feel lost about what to learn and where to focus your energy.
 
@@ -1445,7 +1445,7 @@ Remember — you don't need to learn everything on this roadmap to get your firs
 
 The journey to becoming a full-stack developer is a marathon, not a sprint. Be patient with yourself, build consistently, and never stop being curious.
 
-You've got this. Now go build something amazing! 💻🚀
+You've got this. Now go build something amazing!
     `.trim(),
     date: "2025-03-10",
     readTime: "15 min read",
