@@ -3,7 +3,9 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { TESTIMONIALS } from "@/lib/constants";
+// import { TESTIMONIALS } from "@/lib/constants";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TESTIMONIALS: any[] = [];
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 

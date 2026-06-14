@@ -192,14 +192,13 @@ export default function Hero() {
                     WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 100%)",
                   }}
                 >
-                  <Image
-                    src="/profile.png"
-                    alt={PERSONAL_INFO.name}
-                    fill
-                    priority
-                    unoptimized
-                    className="object-cover object-top"
-                  />
+                    <Image
+                      src="/profile.png"
+                      alt={PERSONAL_INFO.name}
+                      fill
+                      priority
+                      className="object-cover object-top"
+                    />
                 </div>
               </div>
             </div>

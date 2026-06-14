@@ -405,11 +405,19 @@ export const SERVICES: Service[] = [
 // ── Timeline ──────────────────────────────────────────────────
 export const TIMELINE: TimelineItem[] = [
   {
-    year: "2023 - Present",
+    year: "Undergraduate (2023 - Present)",
     title: "BSc (Hons) Computer Science with data Science",
     subtitle: "NIBM",
     description:
       "Pursuing a comprehensive computer science degree with a focus on data science, machine learning, and software engineering. Engaging in advanced coursework and research projects to deepen technical expertise.",
+    type: "education",
+  },
+  {
+    year: "2023 - 2025",
+    title: "Higher National Diploma in Software Engineering",
+    subtitle: "NIBM | GPA: 3.93",
+    description:
+      "Comprehensive software engineering curriculum covering programming, databases, web development, Robotics, IoT and software design principles.",
     type: "education",
   },
   {
@@ -475,14 +483,6 @@ export const TIMELINE: TimelineItem[] = [
     description:
       "Achieved the 'Microsoft Certified: Discover Microsoft AI for leaders in sustainability' certification, demonstrating knowledge of AI applications in sustainability initiatives and understanding how to leverage Microsoft AI technologies for environmental impact.",
     type: "certification",
-  },
-  {
-    year: "2023 - 2024",
-    title: "Higher National Diploma in Software Engineering",
-    subtitle: "NIBM",
-    description:
-      "Comprehensive software engineering curriculum covering programming, databases, web development, Robotics, IoT and software design principles.",
-    type: "education",
   },
 ];
 
