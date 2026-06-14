@@ -175,8 +175,8 @@ body {
 
 .glass-strong {
   background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(100px);
-  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
@@ -447,8 +447,8 @@ select:focus {
 [data-theme="light"] .glass-strong {
   background: rgba(255, 255, 255, 0.85);
   border-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(100px);
-  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
 }
 
 [data-theme="light"] .neumorphic {

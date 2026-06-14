@@ -57,9 +57,9 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        className={`fixed top-0 w-full z-50 transition-all duration-500 transform-gpu ${
           scrolled
-            ? "glass-strong py-3"
+            ? "bg-dark-500/80 dark:bg-dark-500/50 backdrop-blur-2xl border-b border-[var(--glass-border)] shadow-lg py-3"
             : "bg-transparent py-5"
         }`}
         initial={{ y: -100 }}
@@ -196,7 +196,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             />
             <motion.div
-              className={`fixed top-0 right-0 bottom-0 z-[70] w-72 glass-strong flex flex-col ${isHomePage ? "md:hidden" : ""}`}
+              className={`fixed top-0 right-0 bottom-0 z-[70] w-72 bg-dark-500/90 dark:bg-dark-500/80 backdrop-blur-2xl border-l border-[var(--glass-border)] flex flex-col ${isHomePage ? "md:hidden" : ""}`}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
