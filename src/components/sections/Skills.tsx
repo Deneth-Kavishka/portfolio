@@ -14,6 +14,10 @@ import {
   FaJava,
   FaAndroid,
   FaDatabase,
+  FaBootstrap,
+  FaCogs,
+  FaIdBadge,
+  FaChess,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -61,6 +65,7 @@ const iconMap: Record<string, React.ReactNode> = {
   FaCss3Alt: <FaCss3Alt />,
   SiJavascript: <SiJavascript />,
   FaVuejs: <FaVuejs />,
+  FaBootstrap: <FaBootstrap />,
   // Backend
   FaNodeJs: <FaNodeJs />,
   SiExpress: <SiExpress />,
@@ -89,6 +94,9 @@ const iconMap: Record<string, React.ReactNode> = {
   SiEspressif: <SiEspressif />,
   SiMqtt: <SiMqtt />,
   SiC: <SiC />,
+  FaCogs: <FaCogs />,
+  FaIdBadge: <FaIdBadge />,
+  FaChess: <FaChess />,
   // AI & ML
   SiTensorflow: <SiTensorflow />,
   SiPytorch: <SiPytorch />,

@@ -96,6 +96,7 @@ export const SKILLS: Skill[] = [
   { name: "React.js", level: 95, icon: "FaReact", category: "Frontend" },
   { name: "TypeScript", level: 95, icon: "SiTypescript", category: "Frontend" },
   { name: "Next.js", level: 90, icon: "SiNextdotjs", category: "Frontend" },
+  { name: "Bootstrap", level: 90, icon: "FaBootstrap", category: "Frontend" },
   {
     name: "Tailwind CSS",
     level: 90,
@@ -110,6 +111,7 @@ export const SKILLS: Skill[] = [
   { name: "Laravel", level: 90, icon: "FaLaravel", category: "Backend" },
   { name: "Express.js", level: 88, icon: "SiExpress", category: "Backend" },
   { name: "Python", level: 85, icon: "FaPython", category: "Backend" },
+  { name: "Java", level: 85, icon: "FaJava", category: "Backend"},
   { name: "R", level: 85, icon: "SiR", category: "Backend" },
   { name: "Spring Boot", level: 75, icon: "SiSpringboot", category: "Backend" },
   { name: "REST APIs", level: 85, icon: "SiFastapi", category: "Backend" },
@@ -129,13 +131,19 @@ export const SKILLS: Skill[] = [
 
   // Robotics & IoT
   { name: "Arduino", level: 95, icon: "SiArduino", category: "Robotics & IoT" },
+  { name: "Motor Control", level: 90, icon: "FaCogs", category: "Robotics & IoT" },
+  { name: "RFID Systems", level: 90, icon: "FaIdBadge", category: "Robotics & IoT" },
+  { name: "Computer Vision", level: 85, icon: "SiOpencv", category: "Robotics & IoT" },
+  { name: "AI Intelligence Chess", level: 85, icon: "FaChess", category: "Robotics & IoT" },
   { name: "ESP32", level: 85, icon: "SiEspressif", category: "Robotics & IoT" },
   {
     name: "ESP8266",
-    level: 82,
+    level: 85,
     icon: "SiEspressif",
     category: "Robotics & IoT",
   },
+  { name: "Face Recognition", level: 85, icon: "SiOpencv", category: "Robotics & IoT" },
+  { name: "Robotic arm control", level: 80, icon: "FaCogs", category: "Robotics & IoT" },
   { name: "Embedded C", level: 80, icon: "SiC", category: "Robotics & IoT" },
   {
     name: "Raspberry Pi",
@@ -160,13 +168,14 @@ export const SKILLS: Skill[] = [
   // Programming Languages
   { name: "Java", level: 95, icon: "FaJava", category: "Languages" },
   { name: "PHP", level: 95, icon: "FaPhp", category: "Languages" },
-  { name: "Python", level: 90, icon: "FaPython", category: "Languages" },
-  {
+    {
     name: "JavaScript",
     level: 95,
     icon: "SiJavascript",
     category: "Languages",
   },
+  { name: "SQL", level: 92, icon: "FaDatabase", category: "Languages" },
+  { name: "Python", level: 90, icon: "FaPython", category: "Languages" },
   {
     name: "TypeScript",
     level: 90,
@@ -336,7 +345,9 @@ export const SERVICES: Service[] = [
       "Complete application development from database architecture to polished frontend, delivered as a unified solution.",
     icon: "HiServerStack",
     features: [
-      "MERN/MEAN stack development",
+      "MERN stack development",
+      "Laravel applications",
+      "Spring Boot/Java applications",
       "Database design & optimization",
       "Authentication & authorization",
       "Cloud deployment",
