@@ -65,8 +65,9 @@ export default function Projects() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
+                className="flex flex-col h-full"
               >
-                <GlassCard hover glow padding="none" className="group overflow-hidden">
+                <GlassCard hover glow padding="none" className="group overflow-hidden flex flex-col h-full">
                   {/* Image area */}
                   <div className="relative h-48 overflow-hidden bg-dark-300">
                     {project.image ? (
@@ -124,7 +125,7 @@ export default function Projects() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-5">
+                  <div className="p-5 flex flex-col flex-1">
                     <h3 className="text-lg font-bold text-text-primary mb-2 group-hover:text-primary-400 transition-colors">
                       {project.title}
                     </h3>

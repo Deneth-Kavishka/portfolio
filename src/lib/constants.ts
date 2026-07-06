@@ -262,6 +262,27 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Deneth-Kavishka/RoboArm-Testing",
     featured: true,
   },
+    {
+    id: "digital-tresurehunt-platform",
+    title: "Q-Hunt - Digital Tresure Hunt Platform",
+    description:
+      "Q-Hunt is a premium, interactive, real-time QR Code Treasure Hunt platform built with Laravel. It allows administrators to orchestrate physical treasure hunts where teams scan hidden QR codes to unlock stages, solve mind-bending puzzles, and race against the clock to top the live leaderboard.",
+    image: "/projects/Q-Hunt.png",
+    techStack: [
+      "Laravel 11",
+      "Blade Templates",
+      "TailwindCSS v4",
+      "Alpine.js",
+      "Vite",
+      "Node.js",
+      "Html5-Qrcode library",
+    ],
+    category: "Web",
+    liveUrl: "",
+    githubUrl:
+      "https://github.com/Deneth-Kavishka/Q-Hunt",
+    featured: true,
+  },
   {
     id: "smart-attendance-system",
     title: "Attendify - Smart Attendance management System",
@@ -273,8 +294,8 @@ export const PROJECTS: Project[] = [
       "ExpressJS",
       "Node.js",
       "Python",
-      "TensorFlow",
       "OpenCV",
+      "TensorFlow",
     ],
     category: "AI/ML",
     liveUrl: "",
@@ -283,6 +304,30 @@ export const PROJECTS: Project[] = [
     featured: false,
   },
   {
+    id: "portfolio-website",
+    title: "Developer Portfolio Website",
+    description:
+      "This premium portfolio website built with Next.js 15, featuring particle backgrounds, glassmorphism design, and smooth animations.",
+    image: "/projects/portfolioNew.png",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    category: "Web",
+    liveUrl: "https://denethkavishka.vercel.app/",
+    githubUrl: "https://github.com/Deneth-Kavishka/portfolio",
+    featured: false,
+  },
+  {
+    id: "task-scheduler",
+    title: "TaskScheduler - AI Powered Task Management System",
+    description:
+      "TaskScheduler is an intelligent task scheduling application that leverages advanced data structures and algorithms to optimize task management.",
+    image: "/projects/task.png",
+    techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL"],
+    category: "Web",
+    liveUrl: "",
+    githubUrl: "https://github.com/Deneth-Kavishka/TaskScheduler",
+    featured: false,
+  },
+{
     id: "academix",
     title: "ACADEMIX - Tuition Management App",
     description:
@@ -299,30 +344,6 @@ export const PROJECTS: Project[] = [
     liveUrl: "",
     githubUrl:
       "https://github.com/Deneth-Kavishka/TutionManagementApp/tree/Final-Development",
-    featured: false,
-  },
-  {
-    id: "task-scheduler",
-    title: "TaskScheduler - AI Powered Task Management System",
-    description:
-      "TaskScheduler is an intelligent task scheduling application that leverages advanced data structures and algorithms to optimize task management.",
-    image: "/projects/task.png",
-    techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL"],
-    category: "Web",
-    liveUrl: "",
-    githubUrl: "https://github.com/Deneth-Kavishka/TaskScheduler",
-    featured: false,
-  },
-  {
-    id: "portfolio-website",
-    title: "Developer Portfolio Website",
-    description:
-      "This premium portfolio website built with Next.js 15, featuring particle backgrounds, glassmorphism design, and smooth animations.",
-    image: "/projects/portfolioNew.png",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    category: "Web",
-    liveUrl: "https://denethkavishka.vercel.app/",
-    githubUrl: "https://github.com/Deneth-Kavishka/portfolio",
     featured: false,
   },
   {
