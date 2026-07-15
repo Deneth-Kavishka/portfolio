@@ -27,8 +27,7 @@ export default function BlogPage() {
           </h1>
 
           <p className="text-text-secondary max-w-2xl mx-auto leading-relaxed mb-8">
-            Sharing my knowledge and experiences in software engineering, web
-            development, IoT, and robotics.
+            Sharing my knowledge and experiences in Data Science, Computer Science, Software Engineering, Full-Stack Development, IoT & Robotics and AI & ML.
           </p>
 
           <div className="flex flex-col items-center justify-center text-center mt-8 pt-8 border-t border-[var(--glass-border)]">
