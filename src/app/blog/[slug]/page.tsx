@@ -263,6 +263,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               src={post.coverImage}
               alt={post.title}
               fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
               className="object-cover"
               priority
             />
@@ -372,18 +373,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <FloatingCommentButton />
 
         {/* Footer nav */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-20">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass text-text-secondary hover:text-primary-400 transition-all"
           >
-            ← All Posts
+            All Posts
           </Link>
           <Link
             href="/"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0088cc] text-white font-medium hover:bg-[#0077b6] transition-all hover:shadow-[0_0_20px_rgba(0,136,204,0.4)]"
           >
-            Home →
+            Home
           </Link>
         </div>
       </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
@@ -17,12 +15,10 @@ const Footer = dynamic(() => import("@/components/layout/Footer"));
 
 // Defer heavy visual effects — load after page is interactive
 const ParticleBackground = dynamic(
-  () => import("@/components/effects/ParticleBackground"),
-  { ssr: false }
+  () => import("@/components/effects/ParticleBackground")
 );
 const CustomCursor = dynamic(
-  () => import("@/components/effects/CustomCursor"),
-  { ssr: false }
+  () => import("@/components/effects/CustomCursor")
 );
 
 export default function Home() {

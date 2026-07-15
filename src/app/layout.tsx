@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://deneth.vercel.app";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,8 +31,17 @@ const dealorasFont = localFont({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a1a" },
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+  ],
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://deneth-kavishka"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Deneth Kavishka | Software Engineer & Full-Stack Developer",
     template: "%s | Deneth Kavishka",
@@ -54,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://deneth-kavishka",
+    url: SITE_URL,
     siteName: "Deneth Kavishka Portfolio",
     title: "Deneth Kavishka | Software Engineer & Full-Stack Developer",
     description:
@@ -108,7 +119,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Deneth Kavishka",
-              url: "https://deneth-kavishka",
+              url: SITE_URL,
               jobTitle: "Software Engineer",
               worksFor: {
                 "@type": "Organization",

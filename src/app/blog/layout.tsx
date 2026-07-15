@@ -1,17 +1,13 @@
-"use client";
-
 import dynamic from "next/dynamic";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const ParticleBackground = dynamic(
-  () => import("@/components/effects/ParticleBackground"),
-  { ssr: false }
+  () => import("@/components/effects/ParticleBackground")
 );
 const CustomCursor = dynamic(
-  () => import("@/components/effects/CustomCursor"),
-  { ssr: false }
+  () => import("@/components/effects/CustomCursor")
 );
 
 export default function BlogLayout({

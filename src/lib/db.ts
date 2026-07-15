@@ -1,5 +1,5 @@
 // ============================================================
-// MongoDB Connection Singleton
+// MongoDB Connection Singleton (with globalThis for HMR safety)
 // ============================================================
 
 import { MongoClient, Db } from "mongodb";
@@ -7,11 +7,16 @@ import { MongoClient, Db } from "mongodb";
 const MONGODB_URI = process.env.MONGODB_URI!;
 const DB_NAME = "portfolio-blog";
 
-let cachedClient: MongoClient | null = null;
-let cachedDb: Db | null = null;
+const globalForMongo = globalThis as unknown as {
+  _mongoClient: MongoClient | null;
+  _mongoDb: Db | null;
+};
+
+globalForMongo._mongoClient = globalForMongo._mongoClient ?? null;
+globalForMongo._mongoDb = globalForMongo._mongoDb ?? null;
 
 export async function getDb(): Promise<Db> {
-  if (cachedDb) return cachedDb;
+  if (globalForMongo._mongoDb) return globalForMongo._mongoDb;
 
   if (!MONGODB_URI) {
     throw new Error(
@@ -22,14 +27,14 @@ export async function getDb(): Promise<Db> {
   const client = await MongoClient.connect(MONGODB_URI);
   const db = client.db(DB_NAME);
 
-  cachedClient = client;
-  cachedDb = db;
+  globalForMongo._mongoClient = client;
+  globalForMongo._mongoDb = db;
 
   return db;
 }
 
 export async function getClient(): Promise<MongoClient> {
-  if (cachedClient) return cachedClient;
+  if (globalForMongo._mongoClient) return globalForMongo._mongoClient;
   await getDb();
-  return cachedClient!;
+  return globalForMongo._mongoClient!;
 }

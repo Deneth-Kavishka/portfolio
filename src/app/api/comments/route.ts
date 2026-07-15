@@ -163,8 +163,8 @@ export async function PATCH(request: NextRequest) {
       return NextResponse.json({ error: 'commentId required.' }, { status: 400 });
     }
     const db = await getDb();
-    await db.collection('comments').updateOne(
-      { _id: new ObjectId(commentId) },
+    await db.collection('comments').updateMany(
+      { $or: [{ _id: new ObjectId(commentId) }, { parentId: commentId }] },
       { $set: { hidden } }
     );
     return NextResponse.json({ success: true });

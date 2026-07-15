@@ -9,6 +9,8 @@ import {
   FaTimes,
   FaComment,
   FaShieldAlt,
+  FaChevronDown,
+  FaChevronUp,
 } from "react-icons/fa";
 import type { Comment, ReactionType } from "@/lib/types";
 import Image from "next/image";
@@ -61,6 +63,7 @@ function CommentItem({
     content: "",
   });
   const [submitting, setSubmitting] = useState(false);
+  const [showReplies, setShowReplies] = useState(false);
   const isReplying = replyingTo === comment._id;
   const maxDepth = 3;
 
@@ -226,18 +229,41 @@ function CommentItem({
       </div>
 
       {/* Nested replies */}
-      {comment.replies?.map((reply) => (
-        <CommentItem
-          key={reply._id}
-          comment={reply}
-          onReply={onReply}
-          replyingTo={replyingTo}
-          onSubmitReply={onSubmitReply}
-          onCancelReply={onCancelReply}
-          onReact={onReact}
-          depth={depth + 1}
-        />
-      ))}
+      {comment.replies && comment.replies.length > 0 && (
+        <div className="mt-2">
+          {!showReplies ? (
+            <button
+              onClick={() => setShowReplies(true)}
+              className="flex items-center gap-1.5 ml-6 md:ml-10 text-xs text-primary-400 hover:text-primary-300 transition-colors font-medium cursor-pointer"
+            >
+              <FaChevronDown className="text-[10px]" />
+              View {comment.replies.length} {comment.replies.length === 1 ? "reply" : "replies"}
+            </button>
+          ) : (
+            <div className="space-y-2">
+              <button
+                onClick={() => setShowReplies(false)}
+                className="flex items-center gap-1.5 ml-6 md:ml-10 mb-3 text-xs text-text-muted hover:text-text-primary transition-colors font-medium cursor-pointer"
+              >
+                <FaChevronUp className="text-[10px]" />
+                Hide replies
+              </button>
+              {comment.replies.map((reply) => (
+                <CommentItem
+                  key={reply._id}
+                  comment={reply}
+                  onReply={onReply}
+                  replyingTo={replyingTo}
+                  onSubmitReply={onSubmitReply}
+                  onCancelReply={onCancelReply}
+                  onReact={onReact}
+                  depth={depth + 1}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }
@@ -262,6 +288,7 @@ export default function CommentSection({ postSlug }: CommentSectionProps) {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [showAllComments, setShowAllComments] = useState(false);
 
   const fetchComments = useCallback(async () => {
     try {
@@ -364,7 +391,7 @@ export default function CommentSection({ postSlug }: CommentSectionProps) {
   );
 
   return (
-    <div className="mt-12">
+    <div className="mt-12" id="comments-section">
       {/* Header */}
       <div className="flex items-center gap-3 mb-8">
         <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 flex items-center justify-center text-primary-400">
@@ -527,19 +554,46 @@ export default function CommentSection({ postSlug }: CommentSectionProps) {
         </div>
       ) : (
         <div className="space-y-2">
-          {comments.map((comment) => (
-            <CommentItem
-              key={comment._id}
-              comment={comment}
-              onReply={(id) =>
-                setReplyingTo((prev) => (prev === id ? null : id))
-              }
-              replyingTo={replyingTo}
-              onSubmitReply={handleSubmitReply}
-              onCancelReply={() => setReplyingTo(null)}
-              onReact={handleReact}
-            />
-          ))}
+          {(showAllComments ? comments : comments.slice(0, 3)).map(
+            (comment) => (
+              <CommentItem
+                key={comment._id}
+                comment={comment}
+                onReply={(id) =>
+                  setReplyingTo((prev) => (prev === id ? null : id))
+                }
+                replyingTo={replyingTo}
+                onSubmitReply={handleSubmitReply}
+                onCancelReply={() => setReplyingTo(null)}
+                onReact={handleReact}
+              />
+            )
+          )}
+          
+          {comments.length > 3 && !showAllComments && (
+            <motion.button
+              onClick={() => setShowAllComments(true)}
+              className="w-full mt-4 py-3 rounded-xl glass border border-primary-500/20 text-primary-400 text-sm font-medium hover:bg-primary-500/10 transition-colors cursor-pointer"
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
+            >
+              View all {comments.length} comments
+            </motion.button>
+          )}
+          
+          {comments.length > 3 && showAllComments && (
+            <motion.button
+              onClick={() => {
+                setShowAllComments(false);
+                document.getElementById('comments-section')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="w-full mt-4 py-3 rounded-xl glass border border-[var(--glass-border)] text-text-muted text-sm font-medium hover:text-text-primary transition-colors cursor-pointer"
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
+            >
+              Show less
+            </motion.button>
+          )}
         </div>
       )}
     </div>

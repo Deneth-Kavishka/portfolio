@@ -43,7 +43,7 @@ function buildEmailHtml(
             <p style="margin:0 0 32px;color:#94a3b8;font-size:16px;line-height:1.6;">${postExcerpt}</p>
             <table cellpadding="0" cellspacing="0"><tr><td>
               <a href="${readUrl}" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#0088cc,#00e5ff);color:#003366;font-weight:700;text-decoration:none;border-radius:8px;font-size:16px;">
-                Read Article →
+                Read Article
               </a>
             </td></tr></table>
           </td>

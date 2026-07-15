@@ -8,6 +8,7 @@ import {
   FaCheckCircle,
   FaTimes,
 } from "react-icons/fa";
+import Image from "next/image";
 
 export default function FollowButton() {
   const [email, setEmail] = useState("");
@@ -17,6 +18,8 @@ export default function FollowButton() {
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [showUnsubscribeModal, setShowUnsubscribeModal] = useState(false);
+  const [unsubscribeReason, setUnsubscribeReason] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   // Check localStorage for previously subscribed email
@@ -67,7 +70,7 @@ export default function FollowButton() {
   };
 
   const handleUnsubscribe = async () => {
-    if (!confirm("Are you sure you want to unsubscribe from new post notifications?")) return;
+    setShowUnsubscribeModal(false);
     setStatus("loading");
     setErrorMsg("");
 
@@ -77,7 +80,7 @@ export default function FollowButton() {
       const res = await fetch("/api/followers/unsubscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: subscribedEmail }),
+        body: JSON.stringify({ email: subscribedEmail, reason: unsubscribeReason }),
       });
 
       if (res.ok) {
@@ -103,28 +106,76 @@ export default function FollowButton() {
   if (isSubscribed) {
     return (
       <div className="flex items-center gap-3 my-4">
-        <motion.button
-          onClick={handleUnsubscribe}
-          disabled={status === "loading"}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-black/5 dark:bg-white/5 text-text-secondary hover:text-text-primary hover:bg-black/10 dark:hover:bg-white/10 border border-black/10 dark:border-white/10 transition-all cursor-pointer disabled:opacity-50"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          {status === "loading" ? (
-            <span className="w-4 h-4 border-2 border-text-muted border-t-transparent rounded-full animate-spin" />
-          ) : (
-            <>
-              <FaBell className="text-xs" />
-              Subscribed
-            </>
-          )}
-        </motion.button>
+        <div className="relative">
+          <motion.button
+            onClick={() => setShowUnsubscribeModal(true)}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface-medium border border-primary-500/20 text-primary-400 font-medium hover:bg-surface-light hover:border-primary-500/40 transition-all cursor-pointer text-sm shadow-sm"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            title="Click to unsubscribe"
+          >
+            <FaCheckCircle className="text-primary-500" />
+            <span>Subscribed</span>
+          </motion.button>
+        </div>
         {status === "error" && (
           <span className="text-red-400 text-xs">{errorMsg}</span>
         )}
         {status === "success" && (
           <span className="text-green-400 text-xs">Subscribed!</span>
         )}
+
+        {/* Unsubscribe Confirmation Modal */}
+        <AnimatePresence>
+          {showUnsubscribeModal && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-dark-500/80 backdrop-blur-sm">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="glass rounded-2xl p-6 md:p-8 max-w-sm w-full border border-[var(--glass-border)] shadow-2xl relative"
+              >
+                <div className="w-16 h-16 rounded-full overflow-hidden mb-4 mx-auto border-2 border-primary-500/20 shadow-[0_0_15px_rgba(0,136,204,0.15)] relative">
+                  <Image
+                    src="/icon.png"
+                    alt="Deneth Kavishka"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-text-primary text-center mb-2">
+                  Unsubscribe?
+                </h3>
+                <p className="text-sm text-text-secondary text-center mb-4">
+                  Are you sure you want to stop receiving email notifications for new blog posts?
+                </p>
+
+                <textarea
+                  value={unsubscribeReason}
+                  onChange={(e) => setUnsubscribeReason(e.target.value)}
+                  placeholder="Optional: Please tell us why you are leaving..."
+                  className="w-full bg-surface-medium dark:bg-dark-100/50 border border-[var(--glass-border)] rounded-xl px-3 py-2 text-text-primary placeholder:text-text-muted focus:border-primary-500/50 focus:outline-none transition-colors text-sm resize-none mb-6"
+                  rows={2}
+                />
+                
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setShowUnsubscribeModal(false)}
+                    className="flex-1 py-2.5 rounded-xl bg-surface-medium text-text-primary font-medium hover:bg-surface-light transition-colors cursor-pointer text-sm"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleUnsubscribe}
+                    className="flex-1 py-2.5 rounded-xl bg-red-500/20 text-red-400 font-medium hover:bg-red-500/30 transition-colors cursor-pointer text-sm"
+                  >
+                    Unsubscribe
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }

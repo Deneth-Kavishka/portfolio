@@ -83,7 +83,7 @@ async function sendUnsubscribeEmail(email: string, name: string | undefined) {
         If this was a mistake, you can always resubscribe anytime by visiting the blog. My content on <strong style="color:#f1f5f9;">Software Engineering</strong>, <strong style="color:#f1f5f9;">Full-Stack Web development</strong>, <strong style="color:#f1f5f9;">AI & ML</strong>, <strong style="color:#f1f5f9;">Data Science</strong>, <strong style="color:#f1f5f9;">Future Trends of Tech</strong>, and <strong style="color:#f1f5f9;">IOT & Robotics</strong> will always be free and open.
       </p>
       <a href="${SITE_URL}/blog" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#0088cc,#00e5ff);color:#003366;font-weight:700;text-decoration:none;border-radius:10px;font-size:15px;">
-        Visit the Blog →
+        Visit the Blog
       </a>
       <div style="margin-top:40px;padding-top:24px;border-top:1px solid #1e3a5f;">
         <p style="color:#64748b;font-size:12px;line-height:1.6;">

@@ -22,7 +22,7 @@ export default function NotFound() {
           href="/"
           className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium hover:from-primary-400 hover:to-primary-500 transition-all hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]"
         >
-          ← Back to Home
+          Back to Home
         </Link>
       </div>
     </div>

@@ -33,7 +33,7 @@ async function sendWelcomeEmail(email: string, name: string | undefined, unsubsc
         In the meantime, feel free to check out my latest articles and projects on the blog.
       </p>
       <a href="${SITE_URL}/blog" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#0088cc,#00e5ff);color:#003366;font-weight:700;text-decoration:none;border-radius:10px;font-size:15px;">
-        Explore the Blog →
+        Explore the Blog
       </a>
       <div style="margin-top:40px;padding-top:24px;border-top:1px solid #1e3a5f;">
         <p style="color:#64748b;font-size:12px;line-height:1.6;">

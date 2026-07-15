@@ -451,6 +451,11 @@ function Dashboard({ token }: { token: string }) {
                             Hidden
                           </span>
                         )}
+                        {c.parentId && (
+                          <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-purple-500/20 text-purple-400 uppercase flex items-center gap-1">
+                            <FaReply className="text-[8px]" /> Reply
+                          </span>
+                        )}
                         <span className="text-xs text-text-muted">
                           on{" "}
                           <span className="text-primary-400">
