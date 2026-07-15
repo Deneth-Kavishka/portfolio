@@ -48,11 +48,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         .replace(/>/g, "&gt;")
         .replace(
           /\*\*(.*?)\*\*/g,
-          `<strong class="text-text-primary font-semibold ${isQuote ? "not-italic" : ""} ">$1</strong>`
+          `<strong class="text-text-primary font-semibold ${isQuote ? "not-italic" : ""} ">$1</strong>`,
         )
         .replace(
           /`([^`]+)`/g,
-          `<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm ${isQuote ? "not-italic" : ""} ">$1</code>`
+          `<code class="px-1.5 py-0.5 bg-dark-300 rounded text-primary-400 text-sm ${isQuote ? "not-italic" : ""} ">$1</code>`,
         );
     };
 
@@ -150,7 +150,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               r
                 .split("|")
                 .filter((c) => c.trim())
-                .map((c) => c.trim())
+                .map((c) => c.trim()),
             );
           const headerRow = rows[0];
           const dataRows = rows.slice(2); // skip header and separator
@@ -274,7 +274,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Author Card */}
         <div className="flex flex-col items-center text-center gap-4 mb-10">
           <a
-            href="https://www.linkedin.com/in/deneth-kavishka"
+            href="https://www.linkedin.com/in/deneth-kavishka-338288284/"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 block"
@@ -291,7 +291,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </a>
           <div>
             <a
-              href="https://www.linkedin.com/in/deneth-kavishka"
+              href="https://www.linkedin.com/in/deneth-kavishka-338288284/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lg font-bold text-text-primary hover:text-primary-400 transition-colors block mb-1"
@@ -299,7 +299,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Deneth Kavishka
             </a>
             <p className="text-sm text-text-muted max-w-md mx-auto leading-relaxed mb-4">
-              Software Engineer | Tech Enthusiast | Full-Stack Developer | IoT & Robotics | AI & ML
+              Software Engineer | Tech Enthusiast | Full-Stack Developer | IoT &
+              Robotics | AI & ML
             </p>
             <div className="flex justify-center">
               <FollowButton />
@@ -357,15 +358,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               className="object-cover"
             />
           </div>
-          <h3 className="text-xl font-bold text-text-primary mb-1">Deneth Kavishka</h3>
+          <h3 className="text-xl font-bold text-text-primary mb-1">
+            Deneth Kavishka
+          </h3>
           <p className="text-sm text-text-muted mb-6 max-w-md mx-auto leading-relaxed">
-            Software Engineer & Tech Enthusiast. Exploring the intersections of Full-Stack Web Development, AI & ML, IOT and Robotics.
+            Software Engineer & Tech Enthusiast. Exploring the intersections of
+            Full-Stack Web Development, AI & ML, IOT and Robotics.
           </p>
           <FollowButton />
         </div>
 
         {/* Comments Section */}
-        <div id="comments-section" className="mt-8 border-t border-[var(--glass-border)] pt-12">
+        <div
+          id="comments-section"
+          className="mt-8 border-t border-[var(--glass-border)] pt-12"
+        >
           <CommentSection postSlug={slug} />
         </div>
 

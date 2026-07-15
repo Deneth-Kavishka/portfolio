@@ -262,7 +262,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Deneth-Kavishka/RoboArm-Testing",
     featured: true,
   },
-    {
+  {
     id: "digital-tresurehunt-platform",
     title: "Q-Hunt - Digital Tresure Hunt Platform",
     description:
@@ -279,8 +279,7 @@ export const PROJECTS: Project[] = [
     ],
     category: "Web",
     liveUrl: "",
-    githubUrl:
-      "https://github.com/Deneth-Kavishka/Q-Hunt",
+    githubUrl: "https://github.com/Deneth-Kavishka/Q-Hunt",
     featured: true,
   },
   {
@@ -327,7 +326,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Deneth-Kavishka/TaskScheduler",
     featured: false,
   },
-{
+  {
     id: "academix",
     title: "ACADEMIX - Tuition Management App",
     description:

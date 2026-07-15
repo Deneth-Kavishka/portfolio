@@ -27,12 +27,14 @@ export default function BlogPage() {
           </h1>
 
           <p className="text-text-secondary max-w-2xl mx-auto leading-relaxed mb-8">
-            Sharing my knowledge and experiences in Data Science, Computer Science, Software Engineering, Full-Stack Development, IoT & Robotics and AI & ML.
+            Sharing my knowledge and experiences in Data Science, Computer
+            Science, Software Engineering, Full-Stack Development, IoT &
+            Robotics and AI & ML.
           </p>
 
           <div className="flex flex-col items-center justify-center text-center mt-8 pt-8 border-t border-[var(--glass-border)]">
             <a
-              href="https://www.linkedin.com/in/deneth-kavishka"
+              href="https://www.linkedin.com/in/deneth-kavishka-338288284/"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 mb-3"
@@ -49,7 +51,7 @@ export default function BlogPage() {
             </a>
             <div>
               <a
-                href="https://www.linkedin.com/in/deneth-kavishka"
+                href="https://www.linkedin.com/in/deneth-kavishka-338288284/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-base font-bold text-text-primary hover:text-primary-400 transition-colors block mb-1"
@@ -57,7 +59,7 @@ export default function BlogPage() {
                 Deneth Kavishka
               </a>
               <p className="text-sm text-text-muted mb-4">
-                Blog Author | Tech Enthusiast 
+                Blog Author | Tech Enthusiast
               </p>
               <div className="flex justify-center">
                 <FollowButton />
@@ -66,8 +68,6 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
-
-
 
       {/* Blog Posts Grid */}
       <div className="max-w-4xl mx-auto px-6 pb-24">
