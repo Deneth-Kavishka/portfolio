@@ -99,6 +99,7 @@ function CommentItem({
             {comment.isAdmin ? (
               <Image src="/icon.png" alt="Deneth Kavishka" fill className="object-cover" />
             ) : (
+              // eslint-disable-next-line @next/next/no-img-element
               <img src={`https://unavatar.io/${comment.email}?fallback=${encodeURIComponent(`https://ui-avatars.com/api/?name=${encodeURIComponent(comment.author)}&background=random&color=fff`)}`} alt={comment.author} className="w-full h-full object-cover" />
             )}
           </div>
@@ -386,6 +387,7 @@ export default function CommentSection({ postSlug }: CommentSectionProps) {
           {autoFilled ? (
             <div className="flex items-center gap-3 mb-4 bg-surface-medium dark:bg-dark-100/50 p-3 rounded-xl border border-[var(--glass-border)]">
               <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 bg-gradient-to-br from-primary-500/30 to-accent-500/30">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`https://unavatar.io/${form.email}?fallback=${encodeURIComponent(`https://ui-avatars.com/api/?name=${encodeURIComponent(form.author)}&background=random&color=fff`)}`} alt="Avatar" className="w-full h-full object-cover" />
               </div>
               <div className="text-sm flex-1">

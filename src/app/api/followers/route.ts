@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
       unsubscribeToken,
     };
 
-    await collection.insertOne(follower as any);
+    await collection.insertOne(follower as unknown as import('mongodb').OptionalId<Follower>);
 
     // Send welcome confirmation email
     await sendWelcomeEmail(email.toLowerCase(), name, unsubscribeToken);

@@ -132,7 +132,7 @@ export async function POST(request: NextRequest) {
       ...(isAdmin ? { isAdmin: true } : {}),
     };
 
-    const result = await db.collection<Comment>('comments').insertOne(comment as any);
+    const result = await db.collection<Comment>('comments').insertOne(comment as unknown as import('mongodb').OptionalId<Comment>);
 
     return NextResponse.json(
       {
