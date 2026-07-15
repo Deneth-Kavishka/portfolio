@@ -100,3 +100,34 @@ export interface ContactFormData {
 export type FormStatus = "idle" | "sending" | "sent" | "error";
 
 export type ThemeMode = "dark" | "light";
+
+// ── Blog Engagement Types ─────────────────────────────────────
+
+export interface Follower {
+  _id?: string;
+  email: string;
+  name?: string;
+  subscribedAt: string;
+  unsubscribeToken: string;
+}
+
+export type ReactionType = "👍" | "❤️" | "🔥" | "💡" | "👏";
+
+export interface CommentReaction {
+  type: ReactionType;
+  count: number;
+}
+
+export interface Comment {
+  _id?: string;
+  postSlug: string;
+  author: string;
+  email: string;
+  content: string;
+  parentId?: string | null;
+  reactions: CommentReaction[];
+  createdAt: string;
+  replies?: Comment[];
+  hidden?: boolean;
+  isAdmin?: boolean;
+}

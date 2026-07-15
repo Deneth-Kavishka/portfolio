@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllBlogPosts } from "@/lib/blog";
+import FollowButton from "@/components/blog/FollowButton";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -25,12 +26,49 @@ export default function BlogPage() {
             Articles & Insights
           </h1>
 
-          <p className="text-text-secondary max-w-2xl mx-auto leading-relaxed">
+          <p className="text-text-secondary max-w-2xl mx-auto leading-relaxed mb-8">
             Sharing my knowledge and experiences in software engineering, web
             development, IoT, and robotics.
           </p>
+
+          <div className="flex flex-col items-center justify-center text-center mt-8 pt-8 border-t border-[var(--glass-border)]">
+            <a
+              href="https://www.linkedin.com/in/deneth-kavishka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 mb-3"
+            >
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm overflow-hidden ring-2 ring-primary-500/30">
+                <Image
+                  src="/icon.png"
+                  alt="Deneth Kavishka"
+                  width={56}
+                  height={56}
+                  className="object-cover"
+                />
+              </div>
+            </a>
+            <div>
+              <a
+                href="https://www.linkedin.com/in/deneth-kavishka"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-bold text-text-primary hover:text-primary-400 transition-colors block mb-1"
+              >
+                Deneth Kavishka
+              </a>
+              <p className="text-sm text-text-muted mb-4">
+                Blog Author | Tech Enthusiast 
+              </p>
+              <div className="flex justify-center">
+                <FollowButton />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+
 
       {/* Blog Posts Grid */}
       <div className="max-w-4xl mx-auto px-6 pb-24">

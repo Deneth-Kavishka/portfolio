@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
+import CommentSection from "@/components/blog/CommentSection";
+import FollowButton from "@/components/blog/FollowButton";
+import FloatingCommentButton from "@/components/blog/FloatingCommentButton";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -267,6 +270,42 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         )}
 
+        {/* Author Card */}
+        <div className="flex flex-col items-center text-center gap-4 mb-10">
+          <a
+            href="https://www.linkedin.com/in/deneth-kavishka"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 block"
+          >
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-lg overflow-hidden ring-2 ring-primary-500/30">
+              <Image
+                src="/icon.png"
+                alt="Deneth Kavishka"
+                width={64}
+                height={64}
+                className="object-cover"
+              />
+            </div>
+          </a>
+          <div>
+            <a
+              href="https://www.linkedin.com/in/deneth-kavishka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-bold text-text-primary hover:text-primary-400 transition-colors block mb-1"
+            >
+              Deneth Kavishka
+            </a>
+            <p className="text-sm text-text-muted max-w-md mx-auto leading-relaxed mb-4">
+              Software Engineer | Tech Enthusiast | Full-Stack Developer | IoT & Robotics | AI & ML
+            </p>
+            <div className="flex justify-center">
+              <FollowButton />
+            </div>
+          </div>
+        </div>
+
         {/* Post header */}
         <div className="mb-10">
           <div className="flex flex-wrap gap-2 mb-4">
@@ -303,8 +342,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Content */}
         <article>{renderContent(post.content)}</article>
 
-        {/* Bottom divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent my-12" />
+        {/* Bottom Author & Follow Section */}
+        <div className="mt-16 pt-10 border-t border-[var(--glass-border)] flex flex-col items-center text-center pb-12">
+          <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-gradient-to-r from-primary-500/20 to-accent-500/20 text-primary-400 border border-primary-500/20 uppercase tracking-widest mb-2">
+            Author
+          </span>
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold overflow-hidden ring-2 ring-primary-500/30 mb-4">
+            <Image
+              src="/icon.png"
+              alt="Deneth Kavishka"
+              width={64}
+              height={64}
+              className="object-cover"
+            />
+          </div>
+          <h3 className="text-xl font-bold text-text-primary mb-1">Deneth Kavishka</h3>
+          <p className="text-sm text-text-muted mb-6 max-w-md mx-auto leading-relaxed">
+            Software Engineer & Tech Enthusiast. Exploring the intersections of Full-Stack Web Development, AI & ML, IOT and Robotics.
+          </p>
+          <FollowButton />
+        </div>
+
+        {/* Comments Section */}
+        <div id="comments-section" className="mt-8 border-t border-[var(--glass-border)] pt-12">
+          <CommentSection postSlug={slug} />
+        </div>
+
+        {/* Floating Comment Button */}
+        <FloatingCommentButton />
 
         {/* Footer nav */}
         <div className="flex justify-between items-center">
