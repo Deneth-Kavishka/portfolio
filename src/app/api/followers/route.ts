@@ -26,11 +26,11 @@ async function sendWelcomeEmail(email: string, name: string | undefined, unsubsc
       <p style="color:#f1f5f9;font-size:16px;margin-bottom:24px;">Welcome to Deneth Kavishka's Tech Blog</p>
       <div style="height:1px;background:linear-gradient(90deg,transparent,#0088cc,transparent);margin:0 0 24px;"></div>
       <p style="color:#94a3b8;font-size:15px;line-height:1.8;margin-bottom:24px;">
-        Hey ${displayName}! 👋<br/><br/>
-        Thank you for subscribing to my blog! You'll now receive email notifications whenever I publish new articles about <strong style="color:#f1f5f9;">Software Engineering</strong>, <strong style="color:#f1f5f9;">Full-Stack Web development</strong>, <strong style="color:#f1f5f9;">AI & ML</strong>, <strong style="color:#f1f5f9;">Data Science</strong>, <strong style="color:#f1f5f9;">Future Trends of Tech</strong>, and <strong style="color:#f1f5f9;">IOT & Robotics</strong>.
+        Hey ${displayName} 👋<br/><br/>
+        Thank you for subscribing to my blog! You'll now receive email notifications whenever I publish new articles about <strong style="color:#f1f5f9;">Future Trends in Tech</strong>, <strong style="color:#f1f5f9;">Computer Science</strong>, <strong style="color:#f1f5f9;">Data Science</strong>, <strong style="color:#f1f5f9;">Software Engineering</strong>, <strong style="color:#f1f5f9;">Full-Stack Web development</strong>, <strong style="color:#f1f5f9;">AI & ML</strong>, and <strong style="color:#f1f5f9;">IOT & Robotics</strong>.
       </p>
       <p style="color:#94a3b8;font-size:15px;line-height:1.8;margin-bottom:32px;">
-        In the meantime, feel free to check out my latest articles and projects on the blog.
+        In the meantime, feel free to check out my latest articles, insights and projects on the blog.
       </p>
       <a href="${SITE_URL}/blog" style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#0088cc,#00e5ff);color:#003366;font-weight:700;text-decoration:none;border-radius:10px;font-size:15px;">
         Explore the Blog

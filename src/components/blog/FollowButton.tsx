@@ -224,7 +224,7 @@ export default function FollowButton() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Your Name (Optional)"
+                  placeholder="Your Name"
                   className="w-full bg-surface-medium dark:bg-dark-100/50 border border-[var(--glass-border)] rounded-xl px-3 py-2 text-text-primary placeholder:text-text-muted focus:border-primary-500/50 focus:outline-none transition-colors text-sm"
                 />
               </div>
