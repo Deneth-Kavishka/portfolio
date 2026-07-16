@@ -234,7 +234,7 @@ export default function FollowButton() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com *"
+                  placeholder="your@email.com"
                   required
                   className="w-full bg-surface-medium dark:bg-dark-100/50 border border-[var(--glass-border)] rounded-xl pl-8 pr-3 py-2 text-text-primary placeholder:text-text-muted focus:border-primary-500/50 focus:outline-none transition-colors text-sm"
                 />
