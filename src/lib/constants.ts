@@ -303,6 +303,26 @@ export const PROJECTS: Project[] = [
     featured: false,
   },
   {
+    id: "quanticore-solutions-corporate-website",
+    title: "Quanticore Solutions LLC - Corporate Website",
+    description:
+      "A premium, highly responsive corporate website for an IT Quality Assurance provider. The platform features cinematic scroll animations, custom overlapping section transitions, and a secure serverless contact system, all optimized for lightning-fast global edge delivery.",
+    image: "/projects/Quanticore.png",
+    techStack: [
+      "Next.js (App Router)",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "EmailJS",
+      "Vercel",
+      "Cloudflare"
+    ],
+    category: "Web",
+    liveUrl: "https://quanticoresolutions.com",
+    githubUrl: "https://github.com/Deneth-Kavishka/Quanticore-Solutions", // Make sure this matches your repo name!
+    featured: false,
+  },
+  {
     id: "portfolio-website",
     title: "Developer Portfolio Website",
     description:
@@ -346,18 +366,6 @@ export const PROJECTS: Project[] = [
     featured: false,
   },
   {
-    id: "heritage-tourism-app",
-    title: "HeritaGo - All in one Tourist Guide web Application",
-    description:
-      "HeritaGo is an all-in-one tourist guide web application that provides comprehensive information about tourist attractions, hotels, restaurants, and local experiences. It features an AI-powered chatbot assistant that offers personalized recommendations and travel tips based on user preferences.",
-    image: "/projects/heritago.png",
-    techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL"],
-    category: "AI/ML",
-    liveUrl: "",
-    githubUrl: "https://github.com/HeritaGo/HeritaGo_Version1",
-    featured: false,
-  },
-  {
     id: "e-commerce-platform",
     title: "CafeYC - Full automated POS + E - Commerce system for Cafe Y C",
     description:
@@ -367,6 +375,18 @@ export const PROJECTS: Project[] = [
     category: "Web",
     liveUrl: "",
     githubUrl: "https://github.com/Deneth-Kavishka/CafeYC",
+    featured: false,
+  },
+  {
+    id: "heritage-tourism-app",
+    title: "HeritaGo - All in one Tourist Guide web Application",
+    description:
+      "HeritaGo is an all-in-one tourist guide web application that provides comprehensive information about tourist attractions, hotels, restaurants, and local experiences. It features an AI-powered chatbot assistant that offers personalized recommendations and travel tips based on user preferences.",
+    image: "/projects/heritago.png",
+    techStack: ["React", "ExpressJS", "Node.js", "PostgreSQL"],
+    category: "AI/ML",
+    liveUrl: "",
+    githubUrl: "https://github.com/HeritaGo/HeritaGo_Version1",
     featured: false,
   },
 ];
